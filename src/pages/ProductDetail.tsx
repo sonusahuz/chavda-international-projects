@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Heart, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useParams } from 'react-router-dom';
+import useFetch from '@/hooks/useFetch'; // Import the useFetch hook
+import Loading from '@/components/custom/Spinner';
 
 interface Product {
   id: number;
@@ -16,19 +18,21 @@ interface Product {
   images: string[];
   brand: string;
 }
-export default function ProductDetail() {
-  const { id } = useParams();
-  const [product, setProduct] = useState<Product>();
 
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data);
-      });
-  }, []);
+export default function ProductDetail() {
+  const { id } = useParams<{ id: string }>();
+  const {
+    data: product,
+    loading,
+    error,
+  } = useFetch<Product>(`https://dummyjson.com/products/${id}`);
 
   const [currentImage, setCurrentImage] = useState(0);
+
+  if (loading) return <Loading />;
+  if (error) {
+    return <div>Error loading product: {error}</div>;
+  }
 
   return (
     <div className="container mx-auto lg:px-10 px-4 ">
@@ -62,7 +66,7 @@ export default function ProductDetail() {
           <h1 className="text-2xl font-bold">{product?.title}</h1>
           <h1 className="text-xs text-gray-700">{product?.description}</h1>
           <h1 className="text-sm font-bold">Brand : {product?.brand}</h1>
-          <h1 className="text-3xl font-bold">{product?.price}</h1>
+          <h1 className="text-3xl font-bold">${product?.price}</h1>
 
           <div className="space-y-4">
             <Button className="w-full h-11">

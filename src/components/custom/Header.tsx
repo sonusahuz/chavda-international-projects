@@ -33,8 +33,8 @@ export default function Header() {
   return (
     <>
       <header className="w-full">
-        <div className="w-full bg-[#0B6623] text-white h-10">
-          <div className="container flex items-center justify-between py-2.5 px-12">
+        <div className="w-full bg-[#0B6623] text-white h-11">
+          <div className="container flex items-center justify-between py-3 px-12">
             <p className="text-sm font-light hidden md:block">
               FREE SHIPPING OVER R1000
             </p>

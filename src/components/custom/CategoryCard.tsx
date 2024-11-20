@@ -16,7 +16,7 @@ const CategoryCard = ({ category }: { category: string }) => {
               to={`/search/${category.toLowerCase()}`}
               className="flex items-center justify-between gap-2"
             >
-              View All{' '}
+              <span className="hidden lg:block"> View All</span>
               <span>
                 <ChevronRight size={20} className="text-green-500" />
               </span>{' '}

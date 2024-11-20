@@ -37,7 +37,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" required />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full h-11">
                 Login
               </Button>
             </div>
@@ -47,7 +47,7 @@ export default function LoginPage() {
           <p className="text-center text-sm text-gray-600">
             Don&apos;t have an account?{' '}
             <Link
-              to="/signup"
+              to="/register"
               className="font-semibold text-indigo-600 hover:text-indigo-500"
             >
               Sign up

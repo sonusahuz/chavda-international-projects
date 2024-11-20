@@ -34,7 +34,7 @@ const ProductCard = ({
           <div className="p-4">
             <h3 className="font-medium text-sm mb-2 truncate">{title}</h3>
             <div className="flex items-center gap-2">
-              <span className="text-lg font-bold">₹ {price}</span>
+              <span className="text-sm font-bold">₹ {price}</span>
               <span className="text-sm text-muted-foreground line-through">
                 ₹ 3999
               </span>

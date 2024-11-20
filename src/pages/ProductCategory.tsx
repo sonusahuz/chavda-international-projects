@@ -1,5 +1,6 @@
 import ProductCard from '@/components/custom/ProductCard';
-import { useEffect, useState } from 'react';
+import Loading from '@/components/custom/Spinner';
+import useFetch from '@/hooks/useFetch'; // Import the useFetch hook
 import { useParams } from 'react-router-dom';
 
 interface Product {
@@ -14,29 +15,25 @@ interface Product {
 }
 
 const ProductCategory = () => {
-  const { category } = useParams();
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { category } = useParams<{ category: string }>(); // Ensure that 'category' is typed as a string
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch<Product[]>(
+    `https://dummyjson.com/products/search?q=${category}`
+  );
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://dummyjson.com/products/search?q=${category}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [category]);
+  if (loading) return <Loading />;
 
-  if (loading) {
-    return <div>Loading products...</div>;
+  if (error) {
+    return <div>Error loading products: {error}</div>;
   }
 
   return (
     <div className="py-6 px-4">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard
             key={product.id}
             id={product.id}

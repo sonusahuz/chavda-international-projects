@@ -77,12 +77,12 @@ export default function Carousel() {
               onClick={scrollNext}
             >
               <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 items-center h-[300px] md:h-[400px]">
-                  <div className="space-y-4 p-8">
-                    <h2 className="text-2xl md:text-4xl font-bold text-white">
+                <div className="grid grid-cols-1 lg:ml-6 md:grid-cols-2 items-center h-[180px] md:h-[400px]">
+                  <div className="space-y-2 p-8">
+                    <h2 className="text-xl md:text-4xl font-bold text-white">
                       {banner.subtitle}
                     </h2>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white">
+                    <h1 className="text-2xl md:text-6xl font-bold text-white">
                       {banner.title}
                     </h1>
                     <p className="text-xl md:text-3xl font-semibold text-white">
