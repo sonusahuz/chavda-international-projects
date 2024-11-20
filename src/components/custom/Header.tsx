@@ -10,13 +10,16 @@ import {
   Linkedin,
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Drawer } from '../ui/drawer';
 import { handleNavigation } from '@/lib/utils';
 import { useState } from 'react';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const [search, setSearch] = useState<string>('');
 
   const items = [
     { id: '1', title: 'HOME', href: 'home' },
@@ -29,6 +32,17 @@ export default function Header() {
     { id: '4', title: 'LOGIN', href: 'login' },
     { id: '4', title: 'REGISTER', href: 'register' },
   ];
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setSearch(e.target.value);
+  };
+
+  // Define the type for the onKeyDown event
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === 'Enter' && search.trim()) {
+      navigate(`/search-result/${encodeURIComponent(search)}`);
+    }
+  };
 
   return (
     <>
@@ -101,7 +115,10 @@ export default function Header() {
             <div className="relative">
               <Search className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground text-blue-500" />
               <Input
-                className="w-full bg-[#e8f6ec] pl-8"
+                onChange={handleSearchChange}
+                onKeyDown={handleKeyPress}
+                value={search}
+                className="w-full bg-[#f0f7f2] pl-8"
                 placeholder="Search essentials, groceries and more..."
                 type="search"
               />
@@ -135,6 +152,9 @@ export default function Header() {
           <div className="relative">
             <Search className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground" />
             <Input
+              onChange={handleSearchChange}
+              onKeyDown={handleKeyPress}
+              value={search}
               className="w-full bg-[#f0f7f2] pl-8"
               placeholder="Search essentials, groceries and more..."
               type="search"

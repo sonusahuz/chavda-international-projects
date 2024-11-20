@@ -8,6 +8,7 @@ import Cart from './pages/Cart';
 import LoginPage from './pages/Login';
 import SignUpPage from './pages/Register';
 import Wishlist from './pages/Wishlist';
+import SearchProductList from './pages/SearchResult';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<SignUpPage />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/search-result/:term" element={<SearchProductList />} />
         </Routes>
         <Footer />
       </BrowserRouter>

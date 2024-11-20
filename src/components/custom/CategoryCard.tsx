@@ -23,7 +23,7 @@ const CategoryCard = ({ category }: { category: string }) => {
             </Link>
           </div>
         </div>
-        <hr className="text-gray-500" />
+        <hr className="text-gray-500 mb-6" />
         <ProductList category={category.toLowerCase()} />
       </main>
     </div>

@@ -1,7 +1,6 @@
-import React from 'react';
 import ProductCard from '@/components/custom/ProductCard';
 import Loading from '@/components/custom/Spinner';
-import useFetch from '@/hooks/useFetch'; // Import the useFetch hook
+import useFetch from '@/hooks/useFetch';
 import { useParams } from 'react-router-dom';
 
 interface Product {
@@ -11,32 +10,26 @@ interface Product {
   category: string;
   price: number;
   discountPercentage: number;
-  images?: string[];
   thumbnail: string;
 }
 
-const ProductCategory: React.FC = () => {
-  const { category } = useParams<{ category: string }>();
-  const api = `https://dummyjson.com/products/search?q=${category}`;
+const SearchProductList = () => {
+  const { term } = useParams<{ term: string }>();
+  const api = `https://dummyjson.com/products/search?q=${term}`;
 
-  // Typing the response correctly as { products: Product[] }
   const { data, loading, error } = useFetch<{ products: Product[] }>(api);
 
   if (loading) return <Loading />;
-
   if (error) {
-    return <div>Error loading products: {error}</div>;
+    return <div className="text-red-500 text-center">Error: {error}</div>;
   }
 
   if (!data || data.products.length === 0) {
-    return (
-      <div className="text-center">No products found in this category.</div>
-    );
+    return <div className="text-center">No products found.</div>;
   }
 
   return (
-    <div className="py-6 px-4">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-4 lg:px-12">
         {data.products.map((product) => (
           <ProductCard
             key={product.id}
@@ -48,8 +41,7 @@ const ProductCategory: React.FC = () => {
           />
         ))}
       </div>
-    </div>
   );
 };
 
-export default ProductCategory;
+export default SearchProductList;

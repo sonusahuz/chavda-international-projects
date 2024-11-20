@@ -21,11 +21,9 @@ interface Product {
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
-  const {
-    data: product,
-    loading,
-    error,
-  } = useFetch<Product>(`https://dummyjson.com/products/${id}`);
+  const api = `https://dummyjson.com/products/${id}`;
+
+  const { data: product, loading, error } = useFetch<Product>(api);
 
   const [currentImage, setCurrentImage] = useState(0);
 

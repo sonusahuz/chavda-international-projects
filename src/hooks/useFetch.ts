@@ -24,7 +24,7 @@ const useFetch = <T>(url: string): UseFetchResult<T> => {
         setData(result);
       } catch (err) {
         if (err instanceof Error) {
-          setError(err.message); // Now TypeScript knows err is an instance of Error
+          setError(err.message);
         }
       } finally {
         setLoading(false);
