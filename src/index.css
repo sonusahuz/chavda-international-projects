@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,7 +36,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,7 +62,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -63,4 +72,65 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Hidden by default */
+  height: 100%;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.drawer.open {
+  right: 0; /* Slide in when open */
+}
+
+.drawer-content {
+  padding: 20px;
+}
+
+.drawer-title {
+  font-size: 24px;
+}
+
+.drawer-item {
+  padding: 10px 0;
+}
+
+.drawer-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.drawer-slider {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.drawer-close {
+  cursor: pointer;
 }
