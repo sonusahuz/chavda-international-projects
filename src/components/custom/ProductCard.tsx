@@ -18,7 +18,7 @@ const ProductCard = ({
     <Link to={`/product/${id}`}>
       <Card
         key={id}
-        className="w-full sm:w-64 rounded-lg overflow-hidden shadow-md mx-auto"
+        className="w-full sm:w-64 rounded-lg overflow-hidden mx-auto hover:border-blue-500 duration-300"
       >
         <CardContent className="p-0">
           {/* Image Section */}
@@ -34,11 +34,12 @@ const ProductCard = ({
           <div className="p-4">
             <h3 className="font-medium text-sm mb-2 truncate">{title}</h3>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-bold">₹ {price}</span>
+              <span className="text-sm font-semibold">₹ {price}</span>
               <span className="text-sm text-muted-foreground line-through">
                 ₹ 3999
               </span>
             </div>
+            <hr className="text-gray-500 my-2" />
             <div className="text-green-600 text-sm mt-1">
               Save - ₹ {discountPercentage}
             </div>

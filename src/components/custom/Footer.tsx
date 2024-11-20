@@ -46,7 +46,7 @@ const Footer = () => {
                   <div key={idx}>
                     <Link
                       to={link.to}
-                      className="text-white text-sm transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      className="text-gray-300 font-light text-sm transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                     >
                       {link.name}
                     </Link>

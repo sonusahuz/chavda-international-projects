@@ -100,7 +100,7 @@ export default function Header() {
           <Link to="/" className="flex items-center">
             <img
               alt="Chavda International Logo"
-              className="h-7 w-auto"
+              className="h-7 lg:h-10 w-auto"
               loading="lazy"
               src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
             />
