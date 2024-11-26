@@ -1,13 +1,17 @@
+import { MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import CompanyCard from './CompanyCard';
 
 const Footer = () => {
   const footerSections = [
     {
-      title: 'About',
+      title: 'About Company',
       links: [
-        { name: 'About us', to: '#' },
-        { name: 'Contact us', to: '#' },
-        { name: 'Sharpenning Service', to: '#' },
+        { name: 'Contact us', to: '/contact-us' },
+        { name: 'About us', to: '/about-us' },
+        { name: 'Service Area', to: '/service' },
+        { name: 'Career', to: '/careers' },
+        { name: 'Corporate Information', to: '#' },
         { name: 'Schedule Meeting', to: '#' },
       ],
     },
@@ -22,44 +26,59 @@ const Footer = () => {
       ],
     },
     {
-      title: 'Consumer Policy',
+      title: 'Help',
       links: [
-        { name: 'Pricing Policy', to: '#' },
-        { name: 'Pricing Policy', to: '#' },
-        { name: 'Return and Refund Policy', to: '#' },
-        { name: 'Terms and Conditions', to: '#' },
+        { name: 'Payments', to: '#' },
+        { name: 'Shipping', to: '#' },
+        { name: 'FAQ', to: '#' },
+      ],
+    },
+    {
+      title: 'Contact',
+      links: [
+        {
+          name: '18 Southway Road, Kelvin, Sandton',
+          to: '#',
+          icon: <MapPin />,
+        },
+        { name: '(011) 262-0135', to: '#', icon: <Phone /> },
+        // { name: 'marketing@chavda.com', to: '#', icon: <Mail /> },
       ],
     },
   ];
 
   return (
-    <div className="bg-black pt-4 text-white px-2 mt-6 lg:px-20">
-      <footer className="mx-auto max-w-screen-2xl px-4">
-        <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
-          {footerSections.map((section, index) => (
-            <div key={index}>
-              <div className="mb-4 font-bold uppercase tracking-widest text-gray-200">
-                {section.title}
+    <div>
+      <CompanyCard />
+      <div className="bg-black pt-4 text-white px-2 lg:px-12">
+        <footer className="mx-auto max-w-screen-2xl px-4">
+          <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+            {footerSections.map((section, index) => (
+              <div key={index}>
+                <div className="mb-4 font-bold uppercase tracking-widest text-gray-200">
+                  {section.title}
+                </div>
+                <nav className="flex flex-col gap-4">
+                  {section.links.map((link, idx) => (
+                    <div key={idx}>
+                      <Link
+                        to={link.to}
+                        className="text-gray-300 font-light text-sm transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                      >
+                        {link.name}
+                      </Link>
+                    </div>
+                  ))}
+                </nav>
               </div>
-              <nav className="flex flex-col gap-4">
-                {section.links.map((link, idx) => (
-                  <div key={idx}>
-                    <Link
-                      to={link.to}
-                      className="text-gray-300 font-light text-sm transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                    >
-                      {link.name}
-                    </Link>
-                  </div>
-                ))}
-              </nav>
-            </div>
-          ))}
-        </div>
-        <div className="border-t py-8 text-center text-sm text-gray-400">
-          © 2024 - Present Chavda International (PTY) LTD. All rights reserved.
-        </div>
-      </footer>
+            ))}
+          </div>
+          <div className="border-t py-8 text-center text-sm text-gray-400">
+            © 2024 - Present Chavda International (PTY) LTD. All rights
+            reserved.
+          </div>
+        </footer>
+      </div>
     </div>
   );
 };

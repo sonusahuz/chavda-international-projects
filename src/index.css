@@ -134,3 +134,15 @@
 .drawer-close {
   cursor: pointer;
 }
+
+.scroll-container {
+  display: grid;
+  grid-auto-flow: column dense;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none; /* Hide scrollbar for a cleaner look */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-snap-type: x mandatory; /* Snap scrolling to nearest element */
+}
