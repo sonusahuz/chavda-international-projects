@@ -6,11 +6,7 @@ export default function Brands() {
       </header>
 
       <div className="bg-cover bg-center px-4 lg:px-12">
-        <main className="mx-auto py-8">
-             {
-                
-             }
-        </main>
+        <main className="mx-auto py-8">{}</main>
       </div>
     </div>
   );

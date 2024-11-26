@@ -6,7 +6,7 @@ import ProductDetail from './pages/ProductDetail';
 import Footer from './components/custom/Footer';
 import Cart from './pages/Cart';
 import LoginPage from './pages/Login';
-import SignUpPage from './pages/Register';
+import SignUpPage from './pages/Signup';
 import Wishlist from './pages/Wishlist';
 import SearchProductList from './pages/SearchResult';
 import AboutPage from './pages/AboutUs';
@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<SignUpPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
           <Route path="/sharpening-service" element={<SharpenningService />} />
 
           <Route path="/about-us" element={<AboutPage />} />

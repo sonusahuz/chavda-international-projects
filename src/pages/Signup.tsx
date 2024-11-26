@@ -3,17 +3,17 @@ import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
+export default function Signup() {
   return (
     <div>
       {/* Header */}
       <header className="bg-[#006400] text-center">
         <div className="flex items-center py-16 lg:py-0 px-4 lg:px-12 justify-between">
           <h1 className="text-white text-5xl text-center lg:text-left font-bold">
-            Login
+            Sign-up
           </h1>
           <img
-            src="./assets/images/signup/2-removebg-preview.png"
+            src="./assets/images/signup/3-removebg-preview.png"
             alt="Chavda International Logo"
             className=" hidden lg:block"
             width={250}
@@ -33,12 +33,17 @@ export default function Login() {
               <div className="grid md:grid-cols-2">
                 {/* Left Column */}
                 <div className="bg-[#006400] p-8 text-white">
-                  <div className="space-y-4 flex items-center justify-items-end flex-col">
-                    <p className="text-xl font-semibold text-center">
-                      Welcome back! Log in to continue shopping.
+                  <div className="space-y-4">
+                    <h2 className="text-3xl font-semibold text-center">
+                      Looks like you&apos;re new here!
+                    </h2>
+                    <p className="text-center">
+                      Sign up with your mobile number to get started
                     </p>
+                  </div>
+                  <div className="mt-8 flex justify-center">
                     <img
-                      src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
+                      src="./assets/images/signup/1-removebg-preview.png"
                       alt="Login illustration"
                       width={300}
                       height={300}
@@ -63,16 +68,29 @@ export default function Login() {
                         className="w-full p-4 text-lg border-b-2 border-gray-300 focus:border-green-600"
                       />
                     </div>
-
+                    <div>
+                      <Input
+                        type="tel"
+                        placeholder="Enter Your Mobile No."
+                        className="w-full p-4 text-lg border-b-2 border-gray-300 focus:border-green-600"
+                      />
+                    </div>
+                    <div>
+                      <Input
+                        type="password"
+                        placeholder="Enter Your Password"
+                        className="w-full p-4 text-lg border-b-2 border-gray-300 focus:border-green-600"
+                      />
+                    </div>
                     <Button className="w-full bg-[#006400] hover:bg-[#005400] text-white text-lg py-6">
-                      Submit
+                      Continue
                     </Button>
                     <div className="text-center mt-6">
                       <Link
-                        to="/forget-password"
-                        className="text-[#006400] hover:text-[#005400] text-lg font-normal"
+                        to="/login"
+                        className="text-[#006400] hover:text-[#005400] text-lg font-semibold"
                       >
-                        Forget Password
+                        Existing User Login
                       </Link>
                     </div>
                   </form>
