@@ -8,7 +8,6 @@ interface Product {
   description: string;
   category: string;
   price: number;
-  discountPercentage: number;
   thumbnail: string;
 }
 
@@ -34,7 +33,6 @@ const ProductList = ({ category }: { category: string }) => {
           title={product.title}
           thumbnail={product.thumbnail}
           price={product.price}
-          discountPercentage={product.discountPercentage}
         />
       ))}
     </div>

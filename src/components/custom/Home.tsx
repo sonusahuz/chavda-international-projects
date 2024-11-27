@@ -17,6 +17,7 @@ import { Card } from '../ui/card';
 import useFetch from '@/hooks/useFetch';
 import Loading from './Spinner';
 import ProductCard from './ProductCard';
+import { MainNav } from './SubMenu';
 
 interface Product {
   id: number;
@@ -80,10 +81,11 @@ export default function Home() {
 
   return (
     <>
+      <MainNav />
       <Carousel />
-      <div className="flex gap-6 p-6 px-4 md:px-12">
+      <div className="flex gap-6 p-6 px-4 md:px-24">
         {/* Categories Sidebar */}
-        <div className="hidden md:block w-64 space-y-4">
+        <div className="hidden md:block w-72 space-y-4">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <div className="space-y-1 border rounded">
             {categories.map((category) => (
@@ -94,7 +96,7 @@ export default function Home() {
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{category.icon}</span>
-                  <span>{category.name}</span>
+                  <span className="text-sm">{category.name}</span>
                 </div>
                 <ChevronRight className="h-4 w-4 text-gray-500" />
               </Link>
@@ -167,7 +169,6 @@ export default function Home() {
                       title={product.title}
                       thumbnail={product.thumbnail}
                       price={product.price}
-                      discountPercentage={product.discountPercentage}
                     />
                   ))}
               </div>
@@ -276,7 +277,6 @@ export default function Home() {
                           title={product.title}
                           thumbnail={product.thumbnail}
                           price={product.price}
-                          discountPercentage={product.discountPercentage}
                         />
                       ))}
                   </div>

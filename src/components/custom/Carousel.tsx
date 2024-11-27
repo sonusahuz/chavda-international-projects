@@ -1,5 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { Button } from '../ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const banners = [
   {
@@ -8,6 +11,7 @@ const banners = [
     subtitle: 'Best Deal Online on smart watches',
     offer: 'UP to 80% OFF',
     bgColor: 'bg-emerald-700',
+    link: '/shop',
     image:
       'https://cdn.dummyjson.com/products/images/mens-watches/Brown%20Leather%20Belt%20Watch/2.png',
   },
@@ -17,6 +21,7 @@ const banners = [
     subtitle: 'Latest Smartphones on Sale',
     offer: 'UP to 50% OFF',
     bgColor: 'bg-blue-700',
+    link: '/shop',
     image:
       'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/1.png',
   },
@@ -26,6 +31,7 @@ const banners = [
     subtitle: 'Premium Headphones Collection',
     offer: 'UP to 60% OFF',
     bgColor: 'bg-purple-700',
+    link: '/shop',
     image:
       'https://cdn.dummyjson.com/products/images/mobile-accessories/Apple%20AirPods%20Max%20Silver/1.png',
   },
@@ -35,6 +41,7 @@ const banners = [
     subtitle: 'Premium Laptops Collection',
     offer: 'UP to 30% OFF',
     bgColor: 'bg-gray-400',
+    link: '/shop',
     image:
       'https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/1.png',
   },
@@ -71,7 +78,7 @@ export default function Carousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative mx-auto md:px-12 lg:mt-5">
+    <div className="relative mx-auto md:px-24 lg:mt-5">
       <div className="overflow-hidden md:rounded-2xl" ref={emblaRef}>
         <div className="flex">
           {banners.map((banner) => (
@@ -80,7 +87,7 @@ export default function Carousel() {
               className={`relative flex-[0_0_100%] min-w-0 ${banner.bgColor}`}
             >
               <div className="container mx-auto">
-                <div className="grid grid-cols-1 lg:ml-6 md:grid-cols-2 items-center h-[180px] md:h-[400px]">
+                <div className="grid grid-cols-1 lg:ml-6 md:grid-cols-2 items-center h-[250px] md:h-[500px]">
                   <div className="space-y-2 p-8">
                     <h2 className="text-xl md:text-4xl font-bold text-white">
                       {banner.subtitle}
@@ -91,6 +98,11 @@ export default function Carousel() {
                     <p className="text-xl md:text-3xl font-semibold text-white">
                       {banner.offer}
                     </p>
+                    <Link to={banner.link}>
+                      <Button className="mt-4">
+                        Shop Now <ArrowRight />
+                      </Button>
+                    </Link>
                   </div>
                   <div className="relative h-full flex items-center justify-center p-8">
                     <img

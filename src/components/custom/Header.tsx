@@ -53,7 +53,7 @@ export default function Header() {
     return (
       <Link
         to={href}
-        className="flex flex-col items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative"
+        className="flex flex-col pt-2 items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative"
       >
         <div className="relative">
           {icon}
@@ -63,7 +63,7 @@ export default function Header() {
             </span>
           )}
         </div>
-        <span>{label}</span>
+        <span className='text-[13px]'>{label}</span>
       </Link>
     );
   }
@@ -72,7 +72,7 @@ export default function Header() {
     <>
       <header className="w-full">
         <div className="w-full bg-[#0B6623] text-white h-11">
-          <div className="container flex items-center justify-between py-3 px-12">
+          <div className="container flex items-center justify-between py-3 px-24">
             <p className="text-sm font-light hidden md:block">
               FREE SHIPPING OVER R1000
             </p>
@@ -131,7 +131,7 @@ export default function Header() {
         </div>
 
         {/* Main Header */}
-        <div className="container flex items-center justify-between py-4 lg:px-5">
+        <div className="container flex items-center justify-between py-4 lg:px-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
@@ -150,8 +150,8 @@ export default function Header() {
                   onChange={handleSearchChange}
                   onKeyDown={handleKeyPress}
                   value={search}
-                  className="w-full bg-[#f0f7f2] -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
-                  placeholder="Search essentials, groceries and more..."
+                  className="w-full -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                  placeholder="Search Products...."
                   type="text"
                 />
                 <button className="inline-flex items-center bg-green-400 text-white rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
@@ -164,7 +164,7 @@ export default function Header() {
           {/* Actions */}
 
           <div className="hidden md:block mr-10">
-            <nav className="flex justify-between gap-4 items-center">
+            <nav className="flex justify-between gap-7 items-center">
               <NavItem
                 href="/notifications"
                 icon={<Bell className="w-5 h-5" />}
@@ -202,8 +202,8 @@ export default function Header() {
                 onChange={handleSearchChange}
                 onKeyDown={handleKeyPress}
                 value={search}
-                className="w-full bg-[#f0f7f2] -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
-                placeholder="Search essentials, groceries and more..."
+                className="w-full -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                placeholder="Search Products...."
                 type="text"
               />
               <button className="inline-flex items-center bg-green-400 text-white  rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">

@@ -6,27 +6,20 @@ const ProductCard = ({
   title,
   thumbnail,
   price,
-  discountPercentage,
 }: {
   id: number;
   title: string;
   thumbnail: string;
   price: number;
-  discountPercentage: number;
 }) => {
   return (
     <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
       <Card
         key={id}
-        className="w-36 sm:w-60 rounded-lg overflow-hidden mx-auto hover:border-blue-500 duration-300"
+        className="w-36 sm:w-[250px] rounded-lg overflow-hidden mx-auto hover:border-green-500 duration-300 hover:shadow-2xl"
       >
         <CardContent className="p-0">
-          {/* Image Section */}
-          <div className="relative w-full h-48 sm:h-64">
-            <span className="absolute rounded-bl-lg right-0 top-0 bg-blue-500 px-3 py-1.5 text-xs uppercase tracking-wider text-white">
-              56% <br />
-              OFF
-            </span>
+          <div className="relative w-full h-28 sm:h-44">
             <img src={thumbnail} alt={title} className="w-full h-full" />
           </div>
 
@@ -38,10 +31,6 @@ const ProductCard = ({
               <span className="text-sm text-muted-foreground line-through">
                 ₹ 3999
               </span>
-            </div>
-            <hr className="text-gray-500 my-2" />
-            <div className="text-green-600 text-sm mt-1">
-              Save - ₹ {discountPercentage}
             </div>
           </div>
         </CardContent>

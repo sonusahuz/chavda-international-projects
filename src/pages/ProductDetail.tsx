@@ -33,7 +33,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="container mx-auto lg:px-10 px-4 ">
+    <div className="container mx-auto lg:px-24 px-4">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="relative rounded-lg bg-gray-100">
