@@ -1,8 +1,9 @@
-import { MapPin, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import CompanyCard from './CompanyCard';
 
 const Footer = () => {
+  const location = useLocation();
   const footerSections = [
     {
       title: 'About Company',
@@ -26,14 +27,6 @@ const Footer = () => {
       ],
     },
     {
-      title: 'Help',
-      links: [
-        { name: 'Payments', to: '#' },
-        { name: 'Shipping', to: '#' },
-        { name: 'FAQ', to: '#' },
-      ],
-    },
-    {
       title: 'Contact',
       links: [
         {
@@ -42,14 +35,24 @@ const Footer = () => {
           icon: <MapPin />,
         },
         { name: '(011) 262-0135', to: '#', icon: <Phone /> },
-        // { name: 'marketing@chavda.com', to: '#', icon: <Mail /> },
+        { name: 'marketing@chavda.com', to: '#', icon: <Mail /> },
+      ],
+    },
+    {
+      title: 'Help',
+      links: [
+        { name: 'Payments', to: '#' },
+        { name: 'Shipping', to: '#' },
+        { name: 'FAQ', to: '#' },
       ],
     },
   ];
 
+  const isHidden = ['/login', '/signup'].includes(location.pathname);
+
   return (
     <div>
-      <CompanyCard />
+      {!isHidden && <CompanyCard />}
       <div className="bg-black pt-4 text-white px-2 lg:px-12">
         <footer className="mx-auto max-w-screen-2xl px-4">
           <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
@@ -62,6 +65,7 @@ const Footer = () => {
                   {section.links.map((link, idx) => (
                     <div key={idx}>
                       <Link
+                        onClick={() => window.scrollTo(0, 0)} // Scrolls to the top
                         to={link.to}
                         className="text-gray-300 font-light text-sm transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                       >

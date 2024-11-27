@@ -11,7 +11,6 @@ import Wishlist from './pages/Wishlist';
 import SearchProductList from './pages/SearchResult';
 import AboutPage from './pages/AboutUs';
 import ServiceArea from './pages/ServicePage';
-import Shop from './pages/Shop';
 import SharpenningService from './pages/SharpeningService';
 
 const App = () => {
@@ -27,10 +26,7 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/sharpening-service" element={<SharpenningService />} />
-
           <Route path="/about-us" element={<AboutPage />} />
-          <Route path="/shop" element={<Shop />} />
-
           <Route path="/service" element={<ServiceArea />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/search-result/:term" element={<SearchProductList />} />

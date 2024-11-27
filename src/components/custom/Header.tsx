@@ -1,8 +1,5 @@
 import {
-  Search,
-  ShoppingCart,
   Menu,
-  User,
   Facebook,
   Twitter,
   Instagram,
@@ -14,6 +11,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Drawer } from '../ui/drawer';
 import { handleNavigation } from '@/lib/utils';
 import { useState } from 'react';
+import { Bell, User, Package, ShoppingCart } from 'lucide-react';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -30,7 +28,7 @@ export default function Header() {
     { id: '4', title: 'CAREERS', href: 'career' },
     { id: '4', title: 'WISHLIST', href: 'wishlist' },
     { id: '4', title: 'LOGIN', href: 'login' },
-    { id: '4', title: 'REGISTER', href: 'register' },
+    { id: '4', title: 'SIGNUP', href: 'signup' },
   ];
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -43,6 +41,32 @@ export default function Header() {
       navigate(`/search-result/${encodeURIComponent(search)}`);
     }
   };
+
+  interface NavItemProps {
+    icon: React.ReactNode;
+    label: string;
+    badge?: number;
+    href: string;
+  }
+
+  function NavItem({ icon, label, badge, href }: NavItemProps) {
+    return (
+      <Link
+        to={href}
+        className="flex flex-col items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative"
+      >
+        <div className="relative">
+          {icon}
+          {badge && (
+            <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              {badge}
+            </span>
+          )}
+        </div>
+        <span>{label}</span>
+      </Link>
+    );
+  }
 
   return (
     <>
@@ -78,15 +102,27 @@ export default function Header() {
               {/* Vertical Line Separator */}
               <div className="hidden md:block w-px h-4 bg-white/30" />
               <div className="hidden space-x-4 md:flex">
-                <Link className="text-sm hover:underline" to="/">
+                <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="text-sm hover:underline"
+                  to="/"
+                >
                   NEWSLETTER
                 </Link>
                 <div className="hidden md:block w-px h-4 bg-white/30" />
-                <Link className="text-sm hover:underline" to="/">
+                <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="text-sm hover:underline"
+                  to="/"
+                >
                   CONTACT US
                 </Link>
                 <div className="hidden md:block w-px h-4 bg-white/30" />
-                <Link className="text-sm hover:underline" to="/">
+                <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  className="text-sm hover:underline"
+                  to="/"
+                >
                   FAQS
                 </Link>
               </div>
@@ -104,61 +140,76 @@ export default function Header() {
               loading="lazy"
               src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
             />
-            {/* <div className="hidden md:block">
-            <h1 className="text-xl font-bold">CHAVDA</h1>
-            <p className="text-xs">INTERNATIONAL (PTY) LTD</p>
-          </div> */}
           </Link>
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden flex-1 max-w-xl px-6 lg:block">
             <div className="relative">
-              <Search className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground text-blue-500" />
-              <Input
-                onChange={handleSearchChange}
-                onKeyDown={handleKeyPress}
-                value={search}
-                className="w-full bg-[#f0f7f2] pl-8"
-                placeholder="Search essentials, groceries and more..."
-                type="search"
-              />
+              <div className="flex rounded-lg shadow-sm shadow-black/5">
+                <Input
+                  onChange={handleSearchChange}
+                  onKeyDown={handleKeyPress}
+                  value={search}
+                  className="w-full bg-[#f0f7f2] -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                  placeholder="Search essentials, groceries and more..."
+                  type="text"
+                />
+                <button className="inline-flex items-center bg-green-400 text-white rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+                  Search
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Actions */}
 
-          <div className="flex items-center space-x-4 mr-4 lg:mr-3">
-            <div className="hidden md:block">
-              <Link to={'/login'} className="flex items-center space-x-2">
-                <User className=" text-[#0B6623] h-5 w-5" />
-                <span className="text-sm ">Sign Up/Sign In</span>
-              </Link>
-            </div>
-            <Link to="/cart" className="flex items-center space-x-2">
-              <ShoppingCart className="h-5 w-5 text-[#0B6623]" />
-              <span className="text-sm hidden md:block">Cart</span>
-            </Link>
-            <div>
-              <Menu
-                onClick={() => setOpen(true)}
-                className="h-5 w-5 text-[#0B6623] md:hidden"
+          <div className="hidden md:block mr-10">
+            <nav className="flex justify-between gap-4 items-center">
+              <NavItem
+                href="/notifications"
+                icon={<Bell className="w-5 h-5" />}
+                label="Notification"
+                badge={1}
               />
-            </div>
+              <NavItem
+                href="/signup"
+                icon={<User className="w-5 h-5" />}
+                label="Sign up"
+              />
+              <NavItem
+                href="/orders"
+                icon={<Package className="w-5 h-5" />}
+                label="My Orders"
+              />
+              <NavItem
+                href="/cart"
+                icon={<ShoppingCart className="w-5 h-5" />}
+                label="Shopping Cart"
+              />
+            </nav>
           </div>
+          <Menu
+            onClick={() => setOpen(true)}
+            className="h-5 w-5 text-[#0B6623] md:hidden mr-4"
+          />
         </div>
 
         {/* Mobile Search - Visible only on mobile */}
         <div className="container px-4 pb-4 lg:hidden">
           <div className="relative">
-            <Search className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              onChange={handleSearchChange}
-              onKeyDown={handleKeyPress}
-              value={search}
-              className="w-full bg-[#f0f7f2] pl-8"
-              placeholder="Search essentials, groceries and more..."
-              type="search"
-            />
+            <div className="flex rounded-lg shadow-sm shadow-black/5">
+              <Input
+                onChange={handleSearchChange}
+                onKeyDown={handleKeyPress}
+                value={search}
+                className="w-full bg-[#f0f7f2] -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
+                placeholder="Search essentials, groceries and more..."
+                type="text"
+              />
+              <button className="inline-flex items-center bg-green-400 text-white  rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+                Search
+              </button>
+            </div>
           </div>
         </div>
       </header>

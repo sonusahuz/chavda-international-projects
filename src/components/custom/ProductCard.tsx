@@ -15,10 +15,10 @@ const ProductCard = ({
   discountPercentage: number;
 }) => {
   return (
-    <Link to={`/product/${id}`}>
+    <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
       <Card
         key={id}
-        className="w-full sm:w-64 rounded-lg overflow-hidden mx-auto hover:border-blue-500 duration-300"
+        className="w-36 sm:w-60 rounded-lg overflow-hidden mx-auto hover:border-blue-500 duration-300"
       >
         <CardContent className="p-0">
           {/* Image Section */}

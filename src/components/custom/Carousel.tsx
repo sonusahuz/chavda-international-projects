@@ -1,7 +1,5 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const banners = [
   {
@@ -46,10 +44,6 @@ export default function Carousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
@@ -59,7 +53,17 @@ export default function Carousel() {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
-  React.useEffect(() => {
+  // Automatically change slide every 5 seconds
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(() => {
+      scrollNext();
+    }, 3000); // Change image every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [emblaApi, scrollNext]);
+
+  useEffect(() => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on('select', onSelect);
@@ -67,14 +71,13 @@ export default function Carousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative mx-auto md:px-20 lg:mt-5">
+    <div className="relative mx-auto md:px-12 lg:mt-5">
       <div className="overflow-hidden md:rounded-2xl" ref={emblaRef}>
         <div className="flex">
           {banners.map((banner) => (
             <div
               key={banner.id}
               className={`relative flex-[0_0_100%] min-w-0 ${banner.bgColor}`}
-              onClick={scrollNext}
             >
               <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:ml-6 md:grid-cols-2 items-center h-[180px] md:h-[400px]">
@@ -118,20 +121,6 @@ export default function Carousel() {
           ))}
         </div>
       </div>
-
-      <Button
-        onClick={scrollPrev}
-        className="lg:h-20 h-10 lg:w-20 w-10 text-blue-600 absolute top-1/2 lg:left-10 left-1 transform -translate-y-1/2 lg:bg-white bg-black/10 rounded-full cursor-pointer hover:bg-white/10"
-      >
-        <ChevronLeft size={100} />
-      </Button>
-
-      <Button
-        onClick={scrollNext}
-        className="lg:h-20 h-10 lg:w-20 w-10 text-blue-600 absolute top-1/2 lg:right-10 right-1 transform -translate-y-1/2 lg:bg-white bg-black/10 rounded-full cursor-pointer hover:bg-white/10"
-      >
-        <ChevronRight size={100} />
-      </Button>
     </div>
   );
 }
