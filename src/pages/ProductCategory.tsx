@@ -44,7 +44,6 @@ const ProductCategory: React.FC = () => {
             title={product.title}
             thumbnail={product.thumbnail}
             price={product.price}
-            discountPercentage={product.discountPercentage}
           />
         ))}
       </div>

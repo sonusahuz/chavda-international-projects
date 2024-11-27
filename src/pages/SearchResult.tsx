@@ -29,18 +29,17 @@ const SearchProductList = () => {
   }
 
   return (
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-4 lg:px-12">
-        {data.products.map((product) => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            thumbnail={product.thumbnail}
-            price={product.price}
-            discountPercentage={product.discountPercentage}
-          />
-        ))}
-      </div>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-4 lg:px-12">
+      {data.products.map((product) => (
+        <ProductCard
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          thumbnail={product.thumbnail}
+          price={product.price}
+        />
+      ))}
+    </div>
   );
 };
 
