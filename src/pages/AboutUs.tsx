@@ -61,7 +61,7 @@ export default function AboutPage() {
                   src="https://www.youtube.com/embed/of5hyzxRB7c" // Replace with your video URL
                   title="YouTube video player"
                   frameBorder="0"
-                  className="w-[340px] h-[250px] lg:w-[560px] lg:h-[315px] rounded-lg object-cover"
+                  className="w-[330px] h-[180px] lg:w-[560px] lg:h-[315px] rounded-lg object-cover"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>

@@ -133,11 +133,10 @@ export default function Header() {
         {/* Main Header */}
         <div className="flex items-center justify-between py-4 px-4 md:px-5 lg:px-10 xl:px-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/">
             <img
               alt="Chavda International Logo"
-              className="h-7 lg:h-10 w-auto"
-              loading="lazy"
+              className="h-7 lg:h-10"
               src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
             />
           </Link>
@@ -154,7 +153,7 @@ export default function Header() {
                   className="w-full lg:w-[320px] 2xl:w-full"
                   type="text"
                 />
-                <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+                <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
                   Search
                 </button>
               </div>
@@ -206,7 +205,7 @@ export default function Header() {
                 className="w-full mx-auto block"
                 type="text"
               />
-              <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+              <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
                 Search
               </button>
             </div>
