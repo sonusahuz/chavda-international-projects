@@ -5,6 +5,8 @@ import {
   Instagram,
   Youtube,
   Linkedin,
+  ChartBarStacked,
+  CircleUserRound,
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Link, useNavigate } from 'react-router-dom';
@@ -67,6 +69,25 @@ export default function Header() {
       </Link>
     );
   }
+
+  const bottomNavItems = [
+    {
+      icon: <Bell className="w-5 h-5" />,
+      label: 'Notification',
+      href: '/notifications',
+    },
+    {
+      icon: <CircleUserRound className="w-5 h-5" />,
+      label: 'Sign up',
+      href: '/signup',
+    },
+    { icon: <Package className="w-5 h-5" />, label: 'Orders', href: '/orders' },
+    {
+      icon: <ShoppingCart className="w-5 h-5" />,
+      label: 'Cart',
+      href: '/cart',
+    },
+  ];
 
   return (
     <>
@@ -132,6 +153,7 @@ export default function Header() {
 
         {/* Main Header */}
         <div className="flex items-center justify-between py-4 px-4 md:px-5 lg:px-10 xl:px-24">
+          <Menu onClick={() => setOpen(true)} className="h-5 w-5 sm:hidden" />
           {/* Logo */}
           <Link to="/">
             <img
@@ -140,6 +162,38 @@ export default function Header() {
               src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
             />
           </Link>
+
+          <div className=" sm:hidden">
+            <Link to={'/cart'}>
+              <ShoppingCart className="h-5 w-5" />
+            </Link>
+          </div>
+
+          <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-md border-t border-gray-200 sm:hidden z-50">
+            <ul className="flex justify-around items-center py-4">
+              <li
+                onClick={() => window.scrollTo(0, 0)}
+                className="flex flex-col items-center text-gray-600 hover:text-gray-800 transition"
+              >
+                <ChartBarStacked className="w-5 h-5" />
+                <span className="text-xs hidden">Category</span>
+              </li>
+              {bottomNavItems.map((item, index) => (
+                <>
+                  <li key={index}>
+                    <Link
+                      onClick={() => window.scrollTo(0, 0)}
+                      to={item.href}
+                      className="flex flex-col items-center text-gray-600 hover:text-gray-800 transition"
+                    >
+                      {item.icon}
+                      <span className="text-xs hidden">{item.label}</span>
+                    </Link>
+                  </li>
+                </>
+              ))}
+            </ul>
+          </nav>
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden flex-1 max-w-xl lg:block">
@@ -187,10 +241,6 @@ export default function Header() {
               />
             </nav>
           </div>
-          <Menu
-            onClick={() => setOpen(true)}
-            className="h-5 w-5 text-[#0B6623] sm:hidden"
-          />
         </div>
 
         {/* Mobile Search - Visible only on mobile */}

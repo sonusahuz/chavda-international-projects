@@ -62,26 +62,24 @@ function NavigationSubMenu({
 
 export function SubMenu() {
   return (
-    <nav>
-      <div className="px-4 md:px-5 lg:px-10 xl:px-24 mb-2 mx-auto flex items-center justify-center xl:justify-start">
-        <div className="flex justify-between">
-          <div className="flex space-x-7">
-            <div className="hidden md:flex items-center space-x-1">
-              <NavigationSubMenu title="Home" items={homemenu} />
-              <NavigationSubMenu title="Shop" items={homemenu} />
-              <NavigationSubMenu title="Stores" items={homemenu} />
-              <NavigationSubMenu title="Mega menu" items={homemenu} />
-              <NavigationSubMenu title="Pages" items={homemenu} />
-              <NavigationSubMenu title="Accounts" items={homemenu} />
-              <NavigationSubMenu title="Docs" items={homemenu} />
-              <div>
-                <Link
-                  to={'/dashboard'}
-                  className="py-4 px-2 text-sm text-black font-normal hover:text-green-500 transition duration-300"
-                >
-                  Dashboard
-                </Link>
-              </div>
+    <nav className="px-4 md:px-5 lg:px-10 xl:px-24 mb-2 mx-auto flex items-center justify-center xl:justify-start">
+      <div className="flex justify-between">
+        <div className="flex space-x-7">
+          <div className="hidden md:flex items-center space-x-1">
+            <NavigationSubMenu title="Home" items={homemenu} />
+            <NavigationSubMenu title="Shop" items={homemenu} />
+            <NavigationSubMenu title="Stores" items={homemenu} />
+            <NavigationSubMenu title="Mega menu" items={homemenu} />
+            <NavigationSubMenu title="Pages" items={homemenu} />
+            <NavigationSubMenu title="Accounts" items={homemenu} />
+            <NavigationSubMenu title="Docs" items={homemenu} />
+            <div>
+              <Link
+                to={'/dashboard'}
+                className="py-4 px-2 text-sm text-black font-normal hover:text-green-500 transition duration-300"
+              >
+                Dashboard
+              </Link>
             </div>
           </div>
         </div>
