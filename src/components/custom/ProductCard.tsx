@@ -16,11 +16,16 @@ const ProductCard = ({
     <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
       <Card
         key={id}
-        className="w-[330px] sm:w-[250px] rounded-lg overflow-hidden mx-auto hover:border-green-500 duration-300 hover:shadow-2xl"
+        className="rounded-lg overflow-hidden mx-auto hover:border-green-500 duration-300 hover:shadow-2xl max-w-sm w-full"
       >
         <CardContent className="p-0">
+          {/* Image Section */}
           <div className="relative w-full h-full sm:h-44">
-            <img src={thumbnail} alt={title} className="w-full h-full" />
+            <img
+              src={thumbnail}
+              alt={title}
+              className="w-full h-full aspect-[4/3]"
+            />
           </div>
 
           {/* Content Section */}

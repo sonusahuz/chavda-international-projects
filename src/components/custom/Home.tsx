@@ -161,7 +161,7 @@ export default function Home() {
             </div>
 
             <ScrollArea>
-              <div className="flex items-center justify-between gap-5 md:gap-0 flex-wrap">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                 {data.products
                   .slice(currentIndex, currentIndex + itemsPerPage)
                   .map((product) => (
@@ -180,7 +180,9 @@ export default function Home() {
 
           {/* Deal of the Day Section */}
           <div>
-            <h2 className="text-2xl font-semibold mb-1 text-green-600">Deal of the day</h2>
+            <h2 className="text-2xl font-semibold mb-1 text-green-600">
+              Deal of the day
+            </h2>
             <p className="text-gray-600 mb-4 text-sm">
               Brings to users an array of discounts on a variety
             </p>
@@ -272,7 +274,7 @@ export default function Home() {
                 </div>
 
                 <ScrollArea>
-                  <div className="flex items-center justify-between gap-5 md:gap-0 flex-wrap">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                     {data.products
                       .slice(currentIndex, currentIndex + itemsPerPage)
                       .map((product) => (

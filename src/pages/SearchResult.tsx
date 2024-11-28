@@ -29,7 +29,7 @@ const SearchProductList = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 px-4 lg:px-12">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
       {data.products.map((product) => (
         <ProductCard
           key={product.id}
