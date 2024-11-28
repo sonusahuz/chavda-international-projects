@@ -63,7 +63,7 @@ export default function Header() {
             </span>
           )}
         </div>
-        <span className='text-[13px]'>{label}</span>
+        <span className="text-[13px]">{label}</span>
       </Link>
     );
   }
@@ -154,7 +154,7 @@ export default function Header() {
                   placeholder="Search Products...."
                   type="text"
                 />
-                <button className="inline-flex items-center bg-green-400 text-white rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+                <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input bg-background px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-green-600 hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
                   Search
                 </button>
               </div>

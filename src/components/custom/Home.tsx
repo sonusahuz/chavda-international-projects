@@ -5,6 +5,7 @@ import {
   ChevronRight,
   Clock,
   PhoneIcon as MobilePhone,
+  Plus,
   RefreshCw,
   ShoppingBag,
 } from 'lucide-react';
@@ -17,7 +18,8 @@ import { Card } from '../ui/card';
 import useFetch from '@/hooks/useFetch';
 import Loading from './Spinner';
 import ProductCard from './ProductCard';
-import { MainNav } from './SubMenu';
+import { SubMenu } from './SubMenu';
+import CountdownTimer from './CountDownTimer';
 
 interface Product {
   id: number;
@@ -32,12 +34,12 @@ interface Product {
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(
-    window.innerWidth < 768 ? 2 : 4 // Initial value based on the current screen size
+    window.innerWidth < 768 ? 1 : 4 // Initial value based on the current screen size
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 2 : 4);
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 4);
     };
 
     window.addEventListener('resize', handleResize);
@@ -81,13 +83,13 @@ export default function Home() {
 
   return (
     <>
-      <MainNav />
+      <SubMenu />
       <Carousel />
       <div className="flex gap-6 p-6 px-4 md:px-24">
         {/* Categories Sidebar */}
         <div className="hidden md:block w-72 space-y-4">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
-          <div className="space-y-1 border rounded">
+          <div className="space-y-1 border rounded-lg">
             {categories.map((category) => (
               <Link
                 key={category.name}
@@ -103,7 +105,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="space-y-4 mt-8 border rounded">
+          <div className="space-y-4 mt-8 border rounded-lg">
             <div className="flex items-center gap-3 p-3">
               <MobilePhone className="h-8 w-8 text-green-600" />
               <p className="text-sm text-gray-600">
@@ -111,7 +113,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center gap-3 p-3 border-t">
-              <RefreshCw className="h-8 w-8 text-green-600" />
+              <RefreshCw className="h-11 w-11 text-green-600" />
               <p className="text-sm text-gray-600">
                 Return Policy customers can return a product and ask for a
                 refund.
@@ -178,12 +180,12 @@ export default function Home() {
 
           {/* Deal of the Day Section */}
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Deal of the day</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="text-2xl font-semibold mb-1 text-green-600">Deal of the day</h2>
+            <p className="text-gray-600 mb-4 text-sm">
               Brings to users an array of discounts on a variety
             </p>
 
-            <Card className="p-6">
+            <Card className="p-6 border-red-600">
               <div className="flex gap-8 flex-wrap">
                 <img
                   src="https://freshcart-next-js.vercel.app/images/products/product-img-2.jpg"
@@ -214,14 +216,17 @@ export default function Home() {
                     NutriChoice Digestive
                   </h3>
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-bold">$24</span>
-                    <span className="text-lg text-gray-500 line-through">
+                    <span className="text-xl font-bold">$24</span>
+                    <span className="text-sm text-gray-500 line-through">
                       $24
                     </span>
                   </div>
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    Add to cart
+                  <Button className="bg-[#0aad0a] hover:bg-green-700 h-11">
+                    <Plus /> Add to cart
                   </Button>
+                  <div>
+                    <CountdownTimer />
+                  </div>
                 </div>
               </div>
             </Card>
@@ -229,7 +234,7 @@ export default function Home() {
 
           <div>
             <div className="w-full bg-[#ffe6e6] py-3 my-8 px-4 text-center rounded">
-              <div className="flex items-center justify-center flex-wrap gap-2 text-[#ff4d4d]">
+              <div className="flex items-center justify-center flex-wrap gap-2 text-[#ff4d4d] text-sm">
                 <span>First time here? Get 10% off your first order!</span>
                 <span>Click here</span>
                 <code className="border border-dashed border-[#ff4d4d] px-2 py-0.5 font-normal">
@@ -242,7 +247,7 @@ export default function Home() {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h2 className="text-2xl font-semibold">New Products</h2>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-4 text-sm">
                       New products with updated stocks.
                     </p>
                   </div>
