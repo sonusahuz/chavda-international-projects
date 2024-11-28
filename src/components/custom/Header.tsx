@@ -63,7 +63,7 @@ export default function Header() {
             </span>
           )}
         </div>
-        <span className="text-[13px]">{label}</span>
+        <span className="text-[13px] hidden xl:block">{label}</span>
       </Link>
     );
   }
@@ -71,8 +71,8 @@ export default function Header() {
   return (
     <>
       <header className="w-full">
-        <div className="w-full bg-[#0B6623] text-white h-11">
-          <div className="container flex items-center justify-between py-3 px-24">
+        <div className="w-full bg-[#0B6623] text-white h-11 hidden md:block">
+          <div className="flex items-center justify-between py-3 px-4 sm:px-5 md:px-10 lg:px-16 xl:px-24">
             <p className="text-sm font-light hidden md:block">
               FREE SHIPPING OVER R1000
             </p>
@@ -131,7 +131,7 @@ export default function Header() {
         </div>
 
         {/* Main Header */}
-        <div className="container flex items-center justify-between py-4 lg:px-16">
+        <div className="flex items-center justify-between py-4 px-4 md:px-5 lg:px-10 xl:px-24">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
@@ -143,15 +143,15 @@ export default function Header() {
           </Link>
 
           {/* Search Bar - Hidden on mobile */}
-          <div className="hidden flex-1 max-w-xl px-6 lg:block">
+          <div className="hidden flex-1 max-w-xl lg:block">
             <div className="relative">
               <div className="flex rounded-lg shadow-sm shadow-black/5">
                 <Input
                   onChange={handleSearchChange}
                   onKeyDown={handleKeyPress}
                   value={search}
-                  className="w-full -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
                   placeholder="Search Products...."
+                  className="w-full lg:w-[320px] 2xl:w-full"
                   type="text"
                 />
                 <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
@@ -163,7 +163,7 @@ export default function Header() {
 
           {/* Actions */}
 
-          <div className="hidden md:block mr-10">
+          <div className="hidden sm:block">
             <nav className="flex justify-between gap-7 items-center">
               <NavItem
                 href="/notifications"
@@ -190,7 +190,7 @@ export default function Header() {
           </div>
           <Menu
             onClick={() => setOpen(true)}
-            className="h-5 w-5 text-[#0B6623] md:hidden mr-4"
+            className="h-5 w-5 text-[#0B6623] sm:hidden"
           />
         </div>
 
@@ -202,11 +202,11 @@ export default function Header() {
                 onChange={handleSearchChange}
                 onKeyDown={handleKeyPress}
                 value={search}
-                className="w-full -me-px flex-1 rounded-e-none shadow-none focus-visible:z-10"
                 placeholder="Search Products...."
+                className="w-full mx-auto block"
                 type="text"
               />
-              <button className="inline-flex items-center bg-[#0aad0a] text-white  rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+              <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors hover:bg-accent hover:text-foreground focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
                 Search
               </button>
             </div>

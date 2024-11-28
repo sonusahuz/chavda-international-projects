@@ -78,8 +78,8 @@ export default function Carousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative mx-auto md:px-24 lg:mt-5">
-      <div className="overflow-hidden md:rounded-2xl" ref={emblaRef}>
+    <div className="relative mx-auto px-4 md:px-5 lg:px-10 xl:px-24 lg:mt-5">
+      <div className="overflow-hidden rounded md:rounded-2xl" ref={emblaRef}>
         <div className="flex">
           {banners.map((banner) => (
             <div

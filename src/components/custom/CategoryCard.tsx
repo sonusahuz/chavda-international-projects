@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CategoryCard = ({ category }: { category: string }) => {
   return (
     <div>
-      <main className="px-4 md:px-20">
+      <main className="px-4 md:px-5 lg:px-10 xl:px-24">
         <div className="flex items-center justify-between py-6">
           <h1 className="text-gray-600 text-lg">
             Grab the best deals on{' '}

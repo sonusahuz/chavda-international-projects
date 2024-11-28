@@ -34,17 +34,27 @@ interface Product {
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(
-    window.innerWidth < 768 ? 1 : 4 // Initial value based on the current screen size
+    window.innerWidth < 640
+      ? 2 // Small screens (<640px)
+      : window.innerWidth < 1280
+      ? 3 // Medium to Large screens (640px–1280px)
+      : 4 // Extra-large screens (≥1280px)
   );
 
   useEffect(() => {
-    const handleResize = () => {
-      setItemsPerPage(window.innerWidth < 768 ? 1 : 4);
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(2); // Small screens
+      } else if (window.innerWidth < 1280) {
+        setItemsPerPage(3); // Medium to Large screens
+      } else {
+        setItemsPerPage(4); // Extra-large screens
+      }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', updateItemsPerPage);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', updateItemsPerPage);
     };
   }, []);
 
@@ -85,9 +95,9 @@ export default function Home() {
     <>
       <SubMenu />
       <Carousel />
-      <div className="flex gap-6 p-6 px-4 md:px-24">
+      <div className="flex gap-6 p-6 px-4 md:px-5 lg:px-10 xl:px-24">
         {/* Categories Sidebar */}
-        <div className="hidden md:block w-72 space-y-4">
+        <div className="hidden lg:block w-72 space-y-4">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <div className="space-y-1 border rounded-lg">
             {categories.map((category) => (
@@ -161,7 +171,7 @@ export default function Home() {
             </div>
 
             <ScrollArea>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2">
                 {data.products
                   .slice(currentIndex, currentIndex + itemsPerPage)
                   .map((product) => (
@@ -274,7 +284,7 @@ export default function Home() {
                 </div>
 
                 <ScrollArea>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+                  <div className="grid sm:grid-cols-3 xl:grid-cols-4 gap-2">
                     {data.products
                       .slice(currentIndex, currentIndex + itemsPerPage)
                       .map((product) => (

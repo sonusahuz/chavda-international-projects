@@ -63,7 +63,7 @@ function NavigationSubMenu({
 export function SubMenu() {
   return (
     <nav>
-      <div className="px-4 md:px-24">
+      <div className="px-4 md:px-5 lg:px-10 xl:px-24 mb-2 mx-auto flex items-center justify-center xl:justify-start">
         <div className="flex justify-between">
           <div className="flex space-x-7">
             <div className="hidden md:flex items-center space-x-1">
