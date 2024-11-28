@@ -7,7 +7,7 @@ import { RiGoogleFill } from 'react-icons/ri';
 
 export default function SignupPage() {
   return (
-    <div className="flex min-h-screen px-4 sm:px-6 lg:px-12">
+    <div className="flex min-h-screen px-4 md:px-5 lg:px-10 xl:px-24">
       {/* Left Column */}
       <div className="relative hidden w-1/2 lg:block">
         <div className="absolute inset-0">

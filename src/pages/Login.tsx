@@ -5,7 +5,7 @@ import { RiGoogleFill } from 'react-icons/ri';
 
 export default function LoginPage() {
   return (
-    <div className="grid min-h-screen grid-cols-1 lg:grid-cols-2  bg-gray-50">
+    <div className="grid min-h-screen grid-cols-1 lg:grid-cols-2 bg-gray-50">
       {/* Form Section */}
       {/* Image Section */}
       <div className="flex items-center justify-center">
@@ -15,7 +15,7 @@ export default function LoginPage() {
           className="w-full max-w-md object-contain lg:max-w-lg"
         />
       </div>
-      <div className="flex items-center justify-center px-4 py-12">
+      <div className="flex items-center justify-center px-4 md:px-5 lg:px-10 xl:px-24 py-12">
         <div className="w-full max-w-sm space-y-6">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold">

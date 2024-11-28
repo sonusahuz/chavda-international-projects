@@ -35,7 +35,7 @@ const ProductCategory: React.FC = () => {
   }
 
   return (
-    <div className="py-6 px-4">
+    <div className="py-6 px-4 md:px-5 lg:px-10 xl:px-24">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.products.map((product) => (
           <ProductCard

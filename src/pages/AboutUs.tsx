@@ -7,7 +7,7 @@ export default function AboutPage() {
       </header>
 
       <div
-        className="bg-cover bg-center px-4 lg:px-12"
+        className="bg-cover bg-center px-4 md:px-5 lg:px-10 xl:px-24"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./assets/images/about/about-background.jpeg')`,
         }}
