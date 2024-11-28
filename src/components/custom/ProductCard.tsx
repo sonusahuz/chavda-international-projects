@@ -20,7 +20,7 @@ const ProductCard = ({
       >
         <CardContent className="p-0">
           {/* Image Section */}
-          <div className="relative w-full h-full sm:h-44">
+          <div className="relative w-full h-full sm:h-40">
             <img
               src={thumbnail}
               alt={title}

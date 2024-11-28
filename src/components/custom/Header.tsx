@@ -99,7 +99,7 @@ export default function Header() {
     <>
       <header className="w-full">
         <div className="w-full bg-[#0B6623] text-white h-11 hidden md:block">
-          <div className="flex items-center justify-between py-3 px-4 sm:px-5 md:px-10 lg:px-16 xl:px-24">
+          <div className="flex items-center justify-between py-3 px-4 md:px-5 lg:px-10 xl:px-24">
             <p className="text-sm font-light hidden md:block">
               FREE SHIPPING OVER R1000
             </p>
@@ -165,7 +165,7 @@ export default function Header() {
             <img
               alt="Chavda International Logo"
               className="h-7 lg:h-10"
-              src="https://chavda.com/wp-content/uploads/2023/07/logo_chavda_w_g.png"
+              src="./logo.png"
             />
           </Link>
 
@@ -203,14 +203,14 @@ export default function Header() {
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden flex-1 max-w-xl lg:block">
-            <div className="relative">
-              <div className="flex rounded-lg shadow-sm shadow-black/5">
+            <div className="relative lg:w-[320px] xl:w-auto mx-auto items-center">
+              <div className="flex rounded-lg shadow-sm shadow-black/5 ">
                 <Input
                   onChange={handleSearchChange}
                   onKeyDown={handleKeyPress}
                   value={search}
                   placeholder="Search Products...."
-                  className="w-full lg:w-[320px] 2xl:w-full"
+                  className="w-full 2xl:w-full"
                   type="text"
                 />
                 <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">

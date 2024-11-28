@@ -12,7 +12,7 @@ export default function SignupPage() {
       <div className="relative hidden w-1/2 lg:block">
         <div className="absolute inset-0">
           <img
-            src="/placeholder.svg?height=800&width=700"
+            src="./assets/images/signup/signupimage.jpg"
             alt="Office background"
             className="h-full w-full object-cover"
             width={700}
@@ -22,24 +22,31 @@ export default function SignupPage() {
         <div className="absolute inset-0 bg-black/40">
           <div className="p-8">
             <img
-              src="/placeholder.svg?height=50&width=200"
+              src="./logo.png"
               alt="Chavda International Logo"
               width={200}
               height={50}
               className="mb-8"
             />
-            <div className="mt-32">
-              <div className="inline-block rounded-lg bg-green-500 px-4 py-2 text-white">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">👍</span>
-                  <span>25 years of Procurement and Logistics</span>
+            <div className="relative mt-72 p-6">
+              {/* Background with blur effect */}
+              <div className="absolute inset-0 bg-black/40 rounded-lg backdrop-blur-sm z-0"></div>
+
+              {/* Foreground content */}
+              <div className="relative z-10">
+                <div className="inline-block rounded-lg bg-green-500 px-4 py-2 text-white">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">👍</span>
+                    <span>25 years of Procurement and Logistics</span>
+                  </div>
                 </div>
+                <p className="mt-4 text-lg text-white">
+                  Chavda International (Pty) Ltd., founded in 1999, embarked on
+                  its journey as a dedicated supplier of mining equipment and
+                  services, primarily catering to the needs of the African
+                  market.
+                </p>
               </div>
-              <p className="mt-4 text-lg text-white">
-                Chavda International (Pty) Ltd., founded in 1999, embarked on
-                its journey as a dedicated supplier of mining equipment and
-                services, primarily catering to the needs of the African market.
-              </p>
             </div>
           </div>
         </div>
