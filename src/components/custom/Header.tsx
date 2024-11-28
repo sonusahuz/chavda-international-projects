@@ -7,6 +7,7 @@ import {
   Linkedin,
   ChartBarStacked,
   CircleUserRound,
+  Home,
 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Link, useNavigate } from 'react-router-dom';
@@ -72,6 +73,17 @@ export default function Header() {
 
   const bottomNavItems = [
     {
+      icon: <ShoppingCart className="w-5 h-5" />,
+      label: 'Cart',
+      href: '/cart',
+    },
+    {
+      icon: <Home className="w-5 h-5" />,
+      label: 'Home',
+      href: '/',
+    },
+
+    {
       icon: <Bell className="w-5 h-5" />,
       label: 'Notification',
       href: '/notifications',
@@ -80,12 +92,6 @@ export default function Header() {
       icon: <CircleUserRound className="w-5 h-5" />,
       label: 'Sign up',
       href: '/signup',
-    },
-    { icon: <Package className="w-5 h-5" />, label: 'Orders', href: '/orders' },
-    {
-      icon: <ShoppingCart className="w-5 h-5" />,
-      label: 'Cart',
-      href: '/cart',
     },
   ];
 
