@@ -284,7 +284,7 @@ export default function Home() {
                 </div>
 
                 <ScrollArea>
-                  <div className="grid sm:grid-cols-3 xl:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2">
                     {data.products
                       .slice(currentIndex, currentIndex + itemsPerPage)
                       .map((product) => (
