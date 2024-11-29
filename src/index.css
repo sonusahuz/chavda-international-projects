@@ -141,11 +141,9 @@
 }
 
 .scroll-container {
-  display: grid;
-  grid-auto-flow: column dense;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: start;
   overflow-x: scroll;
   scrollbar-width: none; /* Hide scrollbar for a cleaner look */
   scroll-behavior: smooth; /* Enable smooth scrolling */

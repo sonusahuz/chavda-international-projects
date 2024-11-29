@@ -3,11 +3,11 @@ const CompanyCard = () => {
     {
       id: 1,
       name: 'Company 1',
-      image: './assets/images/company/company10.png',
+      image: './assets/images/company/company1.png',
     },
     {
       id: 2,
-      image: './assets/images/company/company9.png',
+      image: './assets/images/company/company2.png',
     },
     {
       id: 3,
@@ -28,6 +28,18 @@ const CompanyCard = () => {
     {
       id: 7,
       image: './assets/images/company/company7.png',
+    },
+    {
+      id: 8,
+      image: './assets/images/company/company8.webp',
+    },
+    {
+      id: 9,
+      image: './assets/images/company/company9.png',
+    },
+    {
+      id: 10,
+      image: './assets/images/company/company10.png',
     },
   ];
   return (

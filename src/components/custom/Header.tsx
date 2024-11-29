@@ -8,13 +8,25 @@ import {
   ChartBarStacked,
   CircleUserRound,
   Home,
+  Search,
+  ShoppingBag,
+  GitCompare,
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
 import { Input } from '@/components/ui/input';
 import { Link, useNavigate } from 'react-router-dom';
 import { Drawer } from '../ui/drawer';
 import { handleNavigation } from '@/lib/utils';
 import { useState } from 'react';
-import { Bell, User, Package, ShoppingCart } from 'lucide-react';
+import { Bell, ShoppingCart } from 'lucide-react';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -44,32 +56,6 @@ export default function Header() {
       navigate(`/search-result/${encodeURIComponent(search)}`);
     }
   };
-
-  interface NavItemProps {
-    icon: React.ReactNode;
-    label: string;
-    badge?: number;
-    href: string;
-  }
-
-  function NavItem({ icon, label, badge, href }: NavItemProps) {
-    return (
-      <Link
-        to={href}
-        className="flex flex-col pt-2 items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors relative"
-      >
-        <div className="relative">
-          {icon}
-          {badge && (
-            <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
-              {badge}
-            </span>
-          )}
-        </div>
-        <span className="text-[13px] hidden xl:block">{label}</span>
-      </Link>
-    );
-  }
 
   const bottomNavItems = [
     {
@@ -159,7 +145,7 @@ export default function Header() {
 
         {/* Main Header */}
         <div className="flex items-center justify-between py-4 px-4 md:px-5 lg:px-10 xl:px-24">
-          <Menu onClick={() => setOpen(true)} className="h-5 w-5 sm:hidden" />
+          <Menu onClick={() => setOpen(true)} className="h-5 w-5 md:hidden" />
           {/* Logo */}
           <Link to="/">
             <img
@@ -203,8 +189,8 @@ export default function Header() {
 
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden flex-1 max-w-xl lg:block">
-            <div className="relative lg:w-[320px] xl:w-auto mx-auto items-center">
-              <div className="flex rounded-lg shadow-sm shadow-black/5 ">
+            <div className="relative lg:w-[500px] xl:w-auto mx-auto items-center">
+              <div className="flex w-full max-w-3xl items-center gap-2 border p-1">
                 <Input
                   onChange={handleSearchChange}
                   onKeyDown={handleKeyPress}
@@ -213,9 +199,21 @@ export default function Header() {
                   className="w-full 2xl:w-full"
                   type="text"
                 />
-                <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
-                  Search
-                </button>
+                <Select>
+                  <SelectTrigger className="w-[180px] border-0 focus:ring-0">
+                    <SelectValue placeholder="SELECT CATEGORY" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="electronics">Electronics</SelectItem>
+                    <SelectItem value="clothing">Clothing</SelectItem>
+                    <SelectItem value="books">Books</SelectItem>
+                    <SelectItem value="home">Home & Garden</SelectItem>
+                  </SelectContent>
+                </Select>
+                <Button variant="ghost" size="icon" className="shrink-0">
+                  <Search className="h-5 w-5" />
+                  <span className="sr-only">Search</span>
+                </Button>
               </div>
             </div>
           </div>
@@ -223,29 +221,55 @@ export default function Header() {
           {/* Actions */}
 
           <div className="hidden sm:block">
-            <nav className="flex justify-between gap-7 items-center">
-              <NavItem
-                href="/notifications"
-                icon={<Bell className="w-5 h-5" />}
-                label="Notification"
-                badge={1}
-              />
-              <NavItem
-                href="/signup"
-                icon={<User className="w-5 h-5" />}
-                label="Sign up"
-              />
-              <NavItem
-                href="/orders"
-                icon={<Package className="w-5 h-5" />}
-                label="My Orders"
-              />
-              <NavItem
-                href="/cart"
-                icon={<ShoppingCart className="w-5 h-5" />}
-                label="Shopping Cart"
-              />
-            </nav>
+            <div className="flex items-center space-x-4">
+              <div className="hidden md:block">
+                <Link to={'/login'} className="flex items-center space-x-2">
+                  <span className="text-sm font-semibold">
+                    LOGIN / REGISTER
+                  </span>
+                </Link>
+              </div>
+
+              <Link
+                to="/cart"
+                className="flex flex-col items-center gap-1 text-sm hover:text-foreground transition-colors relative"
+              >
+                <div className="relative">
+                  <ShoppingCart className="h-5 w-5" />
+                  <span className="absolute -top-2 -right-2 bg-green-600 text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    0
+                  </span>
+                </div>
+              </Link>
+
+              <Link
+                to="/cart"
+                className="flex flex-col items-center gap-1 text-sm hover:text-foreground transition-colors relative"
+              >
+                <div className="relative">
+                  <GitCompare className="h-5 w-5" />
+                  <span className="absolute -top-2 -right-2 bg-green-600 text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    0
+                  </span>
+                </div>
+              </Link>
+
+              <Link
+                to="/cart"
+                className="flex flex-col items-center gap-1 text-sm hover:text-foreground transition-colors relative"
+              >
+                <div className="relative">
+                  <ShoppingBag className="h-5 w-5" />
+                  <span className="absolute -top-2 -right-2 bg-green-600 text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    0
+                  </span>
+                </div>
+              </Link>
+
+              <div>
+                <span className="text-sm">R0.00</span>
+              </div>
+            </div>
           </div>
         </div>
 

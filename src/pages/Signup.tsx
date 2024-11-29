@@ -28,7 +28,7 @@ export default function SignupPage() {
               height={50}
               className="mb-8"
             />
-            <div className="relative mt-72 p-6">
+            <div className="relative mt-96 p-6">
               {/* Background with blur effect */}
               <div className="absolute inset-0 bg-black/40 rounded-lg backdrop-blur-sm z-0"></div>
 
@@ -53,11 +53,11 @@ export default function SignupPage() {
       </div>
 
       {/* Right Column */}
-      <div className="flex w-full flex-col px-4 lg:w-1/2 lg:px-8">
+      <div className="flex w-full flex-col px-4 lg:w-1/2 lg:px-8 bg-gray-50">
         <div className="ml-auto mt-4">
           <p className="text-sm text-gray-600">
             have an account?{' '}
-            <Link to="/signin" className="text-green-500 hover:underline">
+            <Link to="/login" className="text-green-500 hover:underline">
               Sign In
             </Link>
           </p>
@@ -95,13 +95,24 @@ export default function SignupPage() {
 
             <form className="mt-6 space-y-4">
               <div>
-                <Input placeholder="Full Name" />
+                <Input
+                  placeholder="Full Name"
+                  className="bg-white text-black"
+                />
               </div>
               <div>
-                <Input type="email" placeholder="Enter Email" />
+                <Input
+                  type="email"
+                  placeholder="Enter Email"
+                  className="bg-white text-black"
+                />
               </div>
               <div className="relative">
-                <Input type="password" placeholder="Password" />
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  className="bg-white text-black"
+                />
                 <Button
                   variant="ghost"
                   size="icon"
@@ -112,7 +123,11 @@ export default function SignupPage() {
                 </Button>
               </div>
               <div className="relative">
-                <Input type="password" placeholder="Confirm Password" />
+                <Input
+                  type="password"
+                  className="bg-white text-black"
+                  placeholder="Confirm Password"
+                />
                 <Button
                   variant="ghost"
                   size="icon"
@@ -123,7 +138,7 @@ export default function SignupPage() {
                 </Button>
               </div>
               <Button
-                className="w-full bg-green-500 hover:bg-green-600"
+                className="w-full bg-green-500 hover:bg-green-600 h-11"
                 type="submit"
               >
                 Create Account

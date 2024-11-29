@@ -12,6 +12,7 @@ import SearchProductList from './pages/SearchResult';
 import AboutPage from './pages/AboutUs';
 import ServiceArea from './pages/ServicePage';
 import SharpenningService from './pages/SharpeningService';
+import DashBoard from './pages/DashBoard';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/sharpening-service" element={<SharpenningService />} />
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/service" element={<ServiceArea />} />

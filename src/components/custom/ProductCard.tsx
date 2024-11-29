@@ -24,7 +24,7 @@ const ProductCard = ({
             <img
               src={thumbnail}
               alt={title}
-              className="w-full h-full aspect-[4/3]"
+              className="w-full h-full aspect-[4/3] object-contain"
             />
           </div>
 
