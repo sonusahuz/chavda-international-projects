@@ -190,7 +190,7 @@ export default function Header() {
           {/* Search Bar - Hidden on mobile */}
           <div className="hidden flex-1 max-w-xl lg:block">
             <div className="relative lg:w-[500px] xl:w-auto mx-auto items-center">
-              <div className="flex w-full max-w-3xl items-center gap-2 border p-1">
+              <div className="flex w-full max-w-3xl items-center gap-2 border">
                 <Input
                   onChange={handleSearchChange}
                   onKeyDown={handleKeyPress}
@@ -210,7 +210,7 @@ export default function Header() {
                     <SelectItem value="home">Home & Garden</SelectItem>
                   </SelectContent>
                 </Select>
-                <Button variant="ghost" size="icon" className="shrink-0">
+                <Button variant="ghost" size="icon" className="shrink-0 border rounded-none">
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Search</span>
                 </Button>
@@ -221,12 +221,10 @@ export default function Header() {
           {/* Actions */}
 
           <div className="hidden sm:block">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               <div className="hidden md:block">
-                <Link to={'/login'} className="flex items-center space-x-2">
-                  <span className="text-sm font-semibold">
-                    LOGIN / REGISTER
-                  </span>
+                <Link to={'/login'} className="text-sm font-bold">
+                  LOGIN / REGISTER
                 </Link>
               </div>
 
