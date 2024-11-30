@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useParams } from 'react-router-dom';
 import useFetch from '@/hooks/useFetch'; // Import the useFetch hook
 import Loading from '@/components/custom/Spinner';
+import { BreadcrumbWithCustomSeparator } from '@/components/custom/BreadBrumbs';
 
 interface Product {
   id: number;
@@ -32,6 +33,9 @@ export default function ProductDetail() {
 
   return (
     <div className="container mx-auto px-4 md:px-5 lg:px-10 xl:px-24">
+      <div className="py-2">
+        <BreadcrumbWithCustomSeparator />
+      </div>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="relative rounded-lg bg-gray-100">

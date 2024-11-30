@@ -18,7 +18,6 @@ import { Card } from '../ui/card';
 import useFetch from '@/hooks/useFetch';
 import Loading from './Spinner';
 import ProductCard from './ProductCard';
-import { SubMenu } from './SubMenu';
 import CountdownTimer from './CountDownTimer';
 
 interface Product {
@@ -93,7 +92,6 @@ export default function Home() {
 
   return (
     <>
-      <SubMenu />
       <Carousel />
       <div className="flex gap-6 p-6 px-4 md:px-5 lg:px-10 xl:px-24">
         {/* Categories Sidebar */}

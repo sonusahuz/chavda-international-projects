@@ -53,8 +53,8 @@ const Footer = () => {
   return (
     <div>
       {!isHidden && <CompanyCard />}
-      <div className="bg-black pt-4 text-white px-2 lg:px-12 mb-8 sm:mb-0">
-        <footer className="mx-auto max-w-screen-2xl px-4">
+      <div className="bg-black pt-4 text-white px-4 md:px-5 lg:px-10 xl:px-24 mb-8 sm:mb-0">
+        <footer className="mx-auto max-w-screen-2xl">
           <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
             {footerSections.map((section, index) => (
               <div key={index}>

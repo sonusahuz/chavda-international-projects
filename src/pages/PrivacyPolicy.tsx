@@ -1,0 +1,599 @@
+export default function PrivacyPolicy() {
+  return (
+    <div>
+      <header className="bg-[#006400] py-16 text-center">
+        <h1 className="text-white text-5xl font-bold">Privacy Policy</h1>
+      </header>
+
+      <div className="bg-cover bg-center px-4 md:px-5 lg:px-10 xl:px-24">
+        <main className="mx-auto py-8">
+          <div>
+            <p>
+              Please read this Privacy Policy carefully before using this
+              Website as your use of this Website for any reason whatsoever will
+              mean that you have voluntarily agreed to be legally bound by these
+              Terms and conditions.
+            </p>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Application of Terms and Conditions
+            </h1>
+            <div className="flex flex-col gap-4">
+              <p>
+                Chavda International (Proprietary) Limited (“we”, our” or “us”)
+                welcome you to our website www.chavdainternational.com
+                (“Website”). These terms and conditions (“Terms”) apply to any
+                person (hereinafter referred to as “you” or “your”) who uses,
+                accesses or views, the information, content, material, images
+                and intellectual property (“Content”) made available by us on or
+                through the Website or sent to you via email from the Website.
+              </p>
+              <p>
+                If you purchase our products and/or services you will in
+                addition to these Terms, be subject to our Terms of Purchase.
+                Use of the Website.
+              </p>
+              <p>
+                You may not use the Website to obtain or distribute material
+                containing viruses or any other destructive materials or data or
+                code which is able to corrupt, interfere with, jeopardise,
+                disrupt, disable, harm or otherwise impede in any manner the
+                operation of a computer system or hardware or software or the
+                functionality or operation of any part of the Website and
+                Content. You are strictly prohibited from using the Website for
+                “spoofing”, “hacking”, “flaming”, “cracking”, “phishing” or
+                “spamming” or any other activity designed or aimed at achieving
+                purposes similar or the same as the aforementioned acts.
+              </p>
+              <p>
+                You shall not intercept any information transmitted to or from
+                us or the Website which is not intended by us to be received or
+                used by you, and you shall be responsible for all electronic
+                communications, information and content sent by you from any
+                computer or electronic device to us, which for the avoidance of
+                doubt will be sent at your own risk.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Subject to the further provisions of these Terms
+            </h1>
+            <div>
+              <ul className="flex flex-col gap-4">
+                <li>
+                  1) the Website and Content may only be used by you for lawful
+                  purposes and shall not extend to the use of the source code of
+                  the Website and/or Content;
+                </li>
+                <li>
+                  2) you may not frame, modify, copy, distribute, commercialise,
+                  sell exploit and/or alter the Website or Content or any part
+                  thereof or incorporate any part of the Website or Content in
+                  any other work, content or publication (including on other
+                  websites) or use the Website other than in accordance with
+                  these Terms. Any restrictions on the use of the Website and
+                  Content shall also apply to any part of the Website and
+                  Content, which may be cached when using same. You shall not
+                  misrepresent your identity or any other information in any
+                  communication or engagement with us (or our authorised
+                  representatives) or during{' '}
+                  <span className="text-green-800">
+                    your use of the Website
+                  </span>{' '}
+                  and Content, including in the course of purchasing our
+                  products and services. You shall not allow a third party to
+                  decompile, disassemble or otherwise reverse engineer or
+                  attempt to reconstruct or discover any source code, underlying
+                  ideas, algorithms, file formats, programming of the software
+                  forming part of the Website or any files contained in or
+                  generated by the software by any means whatever.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Confidentiality And Disclosure Of Information
+            </h1>
+            <div>
+              <p>
+                We will take appropriate measures to ensure your personal
+                information is kept confidential, however you understand that to
+                balance our legitimate business interests we may share your
+                personal information with:
+              </p>
+              <p>
+                our authorised employees, contractors, service providers,
+                authorised dealers, distributors, representatives and/or agents
+                who have a legitimate need to know your personal information;
+              </p>
+              <p>
+                our CRM service provider and third party merchant account and
+                payment operators;
+              </p>
+              <p>
+                social media and marketing websites or platforms, including
+                Google for purposes of advertising our content, products and
+                services;
+              </p>
+              <p>
+                regulators, auditors, legal advisors, other professionals and
+                affected parties in order to:
+              </p>
+              <p>a. obtain professional advice;</p>
+              <p>b. comply with applicable laws and regulations; and</p>
+              <p>
+                c. protect our rights, including our rights under our Website
+                Terms and Conditions, this Privacy Policy, our Terms of Purchase
+                and any other documents incorporated therein by reference
+                (“Legal Agreements”) (including the investigation of a perceived
+                breach of the Legal Agreements); and
+              </p>
+              <p>
+                d. protect the rights of the users of our Website, content,
+                products and/or services under our Legal Agreements.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Exclusion of Warranties and Representations
+            </h1>
+            <div>
+              <p>
+                As far as the law allows, the Website and Content are made
+                available without any representation or warranty whatsoever,
+                whether express, implied or statutory, including without
+                limitation any representation or warranty as to the operation,
+                accuracy, integrity, compatibility, completeness, correctness,
+                good-use, availability, performance, fitness for a particular
+                purpose, merchantability, reliability or functionality
+              </p>
+              <h1 className="py-4">Further, we do not warrant or represent:</h1>
+              <p>
+                (i) the security of any information provided, submitted or
+                transmitted to or from us through the Website or otherwise;
+              </p>
+              <p>
+                (ii) the Website and Content will be error, omission or virus
+                free or that your access will be uninterrupted and error free;
+                and
+              </p>
+              <p>
+                (iii) that you will attain any particular result from your use
+                or non-use of the Website and Content.
+              </p>
+              <p>Accuracy of Information</p>
+              <ul>
+                <li>
+                  You understand and agree that the information provided on or
+                  through the Website and Content including the details
+                  regarding prices, offers, products and services may change
+                  from time to time. The Website and Content may therefore not
+                  always contain the correct or most up-to-date information,
+                  details and descriptions.
+                </li>
+                <li>
+                  While all reasonable effort has been made to ensure the
+                  accuracy of the information provided on or through the Website
+                  and Content, we do not guarantee the accuracy of such
+                  information or that the information is current and applicable
+                  to you. You acknowledge that the Website, and Content may
+                  contain technical, typographical or other inaccuracies or
+                  errors for which we shall not to the fullest extent permitted
+                  by law be liable for.
+                </li>
+                <li>
+                  We reserve the right to make changes, corrections, updates
+                  and/or improvements to the Website and Content at any time
+                  without notice. Assignment
+                </li>
+                <li>
+                  These Terms, and any rights and licenses granted hereunder,
+                  may not be transferred or assigned by you, but may be assigned
+                  by us without restriction. Any assignment or transfer by you
+                  shall be null and void.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Termination
+            </h1>
+            <div>
+              <p>
+                We reserve the right to terminate your access to the Website and
+                Content at any time, for any reason, without notice. To the
+                extent permitted by law, your obligations under these Terms
+                shall survive termination of your access to the Website and
+                Content.
+              </p>
+              <p>Violation of Terms</p>
+              <p>
+                Please report any violations of these Terms including any
+                documents incorporated herein by reference that you become aware
+                of by contacting us at info@chavda.com.
+              </p>
+              <p>
+                Any failure to act by us with respect to a breach by you or
+                others does not waive our right to act with respect to
+                subsequent or similar breaches by you or others. Electronic
+                Communications
+              </p>
+              <p>
+                By using the Website, you agree that all notices, disclosures,
+                agreements and other communications (“Data Message”) sent by us
+                satisfy all legal requirements, including but not limited to the
+                requirement that such communications should be “in writing”.
+              </p>
+              <p>You agree specifically that:</p>
+              <div>
+                <ul>
+                  <li>
+                    (i) an electronic signature is not required by you or us for
+                    purposes of agreeing to these Terms;
+                  </li>
+                  <li>
+                    (ii) your accessing and using the Website and Content is
+                    sufficient evidence of your agreement to these Terms and the
+                    terms of any documents incorporated by reference;
+                  </li>
+                  <li>
+                    (iii) a Data Message sent by electronic means by you to us
+                    will only be treated as having been received by us when an
+                    acknowledgment of receipt is sent by us personally or a
+                    person who had authority to act on our behalf in respect of
+                    that Data Message.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Interpretation and Dispute Resolution
+            </h1>
+            <div>
+              <ul>
+                <li>
+                  {' '}
+                  These Terms including any documents incorporated by reference
+                  and the relationship between us shall be governed and
+                  construed in accordance with the laws of the Republic of South
+                  Africa.
+                </li>
+                <li>
+                  You agree to notify us of any issues or dissatisfaction that
+                  arises via email correspondence prior to taking any legal
+                  action. Should we be unable to seek resolution within a
+                  reasonable time, you agree that the dispute shall be finally
+                  resolved through arbitration, before a single arbitrator, in
+                  accordance with the Arbitration Act, 1965 and the Commercial
+                  Arbitration Rules of the Arbitration Foundation of South
+                  Africa.
+                </li>
+                <li>
+                  We shall jointly appoint and agree on the arbitrator but
+                  failing agreement between us within 10 (ten) business days of
+                  the arbitration being demanded, we shall appoint the
+                  arbitrator in our sole discretion.
+                </li>
+                <li>
+                  The arbitration shall be held in Johannesburg and the parties
+                  shall endeavor to ensure that it is completed as expediently
+                  as possible without delay after notice requiring the dispute
+                  to be referred to arbitration is given or demanded. Should you
+                  unduly delay, frustrate or fail to take action to commence,
+                  progress or complete the arbitration proceedings you shall
+                  waive your rights to arbitration and any other legal action
+                  and your claim will be regarded as having prescribed. The
+                  ruling of the arbitrator, in the absence of manifest error,
+                  shall be final and binding on the parties and the party in
+                  whose favour the award is granted shall be entitled to all
+                  reasonable fees (including attorney fees) and the costs
+                  necessary to enforce the decision of the arbitrator.
+                </li>
+                <li>
+                  In the event of a dispute, you agree not to engage in or be
+                  responsible for any defamatory, harmful, negative or
+                  disruptive behaviour or communications, whether private or
+                  public that could adversely affect us, our business, Website,
+                  Content or good will in any manner whatsoever. Our failure to
+                  exercise or enforce any right or provision of the Terms shall
+                  not constitute a waiver of such right or provision, nor will
+                  it affect any of our or your accrued rights or liabilities nor
+                  the coming into or continuance in force of any provision of
+                  these Terms which is expressly or by implication intended to
+                  come into or continue in force on or after termination of
+                  these Terms.
+                </li>
+                <li>
+                  If any provision in these Terms is or becomes illegal, invalid
+                  or unenforceable such provisions shall be ineffective to the
+                  extent of such prohibition or unenforceability and shall be
+                  treated as having not been written and severed from the
+                  balance of these Terms, without invalidating the remaining
+                  provisions of these Terms.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Your Agreement to These Terms
+            </h1>
+            <div>
+              <p>
+                The Website and Content are owned by us and protected under both
+                South African and foreign laws. We grant you a non-exlusive,
+                worldwide, non-transferrable licence to use the Website for
+                personal, non-commercial use only which may be revoked by us at
+                any time in our sole discretion.
+              </p>
+
+              <p>
+                {' '}
+                You agree that you will not engage in the use or distribution of
+                the Website and/or Content (or any part thereof) other than as
+                expressly permitted herein. For the avoidance of doubt you must
+                obtain our written permission before you share any of our
+                Content with anyone else or use it for any purpose and in any
+                manner save as expressly permitted herein.
+              </p>
+              <p>
+                Any reproduction, duplication, modification, selling,
+                explotation, copying, creation of derivative works or
+                redistribution of the Website and Content, including the design,
+                graphics and appearance of the Website and Content is expressly
+                prohibited. Copying, duplication and/or reproducing the Website
+                and Content or any part thereof to any other server or location
+                for further reproduction, redistribution and/or selling is also
+                expressly prohibited.
+              </p>
+              <p>
+                You agree not to circumvent, disable or otherwise interfere with
+                security related features of the Website or features that
+                prevent or restrict use or copying or enforce limitations on the
+                use of the Website.
+              </p>
+              <p>
+                Nothing on the Websites should be construed as granting to you,
+                by implication, or otherwise, any license or right to use any
+                trademarks (whether registered or not), tagline or logo, without
+                our prior written permission specific for each such use.
+              </p>
+
+              <p>
+                We reserve all intellectual property and other rights not
+                expressly granted herein to the Website, and Content as well as
+                to any marketing material (including promotional communications)
+                created or used by us in connection the Website, Content or our
+                services.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Intellectual Property Rights
+            </h1>
+            <p>
+              You agree that personal information made available by you for
+              viewing by others on or through our Website, content, social media
+              pages or other websites (“Online Platforms”) can be used and
+              stored by others. We may collect the personal information that you
+              disclose, however, we cannot be liable for the use, security,
+              storage or improper use of such personal information you
+              voluntarily post on Online Platforms.
+            </p>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-4 text-2xl">
+              Collection of Personal Information
+            </h1>
+            <p>
+              We may collect personal information from you and will handle the
+              collection, processing and storage of your personal information in
+              accordance with our Privacy Policy. By disclosing or submitting
+              your personal information to us, you consent to us collecting,
+              processing and storing your personal information for the purposes
+              described in our Privacy Policy
+            </p>
+            <p>
+              To find out what kind of personal information we collect and the
+              purposes for which your personal information will be used, please
+              read our Privacy Policy which can be found on the Website.
+            </p>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-2 text-2xl">
+              Confidential Information{' '}
+            </h1>
+            <div>
+              <p>
+                Please do not email us confidential information (or disclose the
+                confidential parts of your communication) as all emails and
+                communications sent by you to us including but not limited to
+                questions, ideas, concepts, comments, testimonials, feedback,
+                suggestions and the like may be used by us in the development,
+                promotion and marketing of our Website, Content, products and
+                services, or for any other purpose whatsoever without
+                compensation or accreditation to you.
+              </p>
+              <h1>The provisions below</h1>
+              <p>
+                ((1) Disclaimers, (2) Indemnity and Limitation of Liability, (3)
+                Exclusion of Warranties and Representation and (4) Accuracy of
+                Information) constitute an assumption of risk and/or liability
+                by you and limits and excludes liabilities, obligations and
+                legal responsibility, which we will have towards you and other
+                persons. These provisions also limit and exclude your rights and
+                remedies against us and place various risks, liabilities,
+                obligations and legal responsibilities on you. Please ensure
+                that you have read and understood these provisions.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-1 text-2xl">
+              Disclaimers
+            </h1>
+            <div>
+              <ul>
+                <li>
+                  The information provided on or through the Website and Content
+                  is intended and produced for general information purposes only
+                  and should not be relied upon by you as professional advice
+                  (including but not limited to design, safety, health,
+                  investment and/or financial advice) or used in replacement or
+                  substitution of professional advice of any kind.
+                </li>
+                <li>
+                  While due care has been taken in preparing the information
+                  provided on or through the Website and Content, you agree that
+                  we cannot be liable for any acts, omissions, direct, indirect,
+                  incidental, special or consequential loss or damage arising
+                  out of or in connection with your use of the Website and
+                  Content whether caused by negligence, breach of contract or
+                  otherwise.
+                </li>
+                <li>
+                  You understand and agree that we are not, nor can we ever be
+                  responsible for any increase or decrease in the value of your
+                  property (movable and immovable), any of your financial,
+                  business, personal or other results. Your use of the
+                  information (including recommendations) provided on or through
+                  the Websites, Content or otherwise is at your own risk, with
+                  no direct or indirect liability on us.
+                </li>
+                <li>
+                  You understand and agree that we can never be responsible for
+                  any physical or mental illness, disease, injury, harm or
+                  conditions you may have or develop in the and that your use or
+                  non-use of the information (including recommendations)
+                  provided on or through the Website and Content is at your own
+                  risk, with no direct or indirect liability on us.
+                </li>
+                <li>
+                  Neither us nor any of our agents, officers, subsidiaries,
+                  affiliates, partners, successors, assigns, directors, service
+                  providers, distributors, authorised dealers, contractors,
+                  suppliers, employees or representatives (“Ancillary Parties”)
+                  are (or can ever be) responsible for your personal choices,
+                  actions or omissions before, during or after your use (or
+                  non-use) of the Website and Content. You agree that you are
+                  solely responsible for your actions; decisions and results
+                  based on your use, or non-use of the Website and Content.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-1 text-2xl">
+              Indemnity and Limitation of Liability{' '}
+            </h1>
+            <p>
+              To the fullest extent permitted by law, you agree to defend,
+              indemnify us and hold us and our Ancillary Parties harmless from
+              and against any and all claims, actions, applications, demands,
+              direct, indirect, incidental, special or consequential loss or
+              damage including but not limited to loss of income, revenue,
+              profits, savings, business, time and goodwill, all liabilities,
+              costs, debts, and expenses (including professional and attorney
+              fees) whether caused by negligence, breach of contract or
+              otherwise, arising out of or in connection with:
+            </p>
+
+            <div>
+              <ul>
+                <li>
+                  Please review the Privacy Policy each time you visit our
+                  Website to ensure that you are aware of all updates and
+                  changes that are made. i) Your use of and access to the
+                  Website and Content;
+                </li>
+                <li>
+                  ii) Your use of any External Websites or services linked
+                  thereto whether recommended or linked on the Website, in our
+                  Content or otherwise;
+                </li>
+                <li>
+                  iii) Your inability (for any reason whatsoever including but
+                  not limited to security breaches, operational delays, computer
+                  viruses and system and other updates) to use and access the
+                  Website;
+                </li>
+                <li>
+                  iv) Your violation or breach of any of these Terms and any
+                  documents incorporated herein by reference;
+                </li>
+                <li>
+                  v) the unauthorised use, access to or theft of your
+                  information and/or data;
+                </li>
+                <li>
+                  vi) Your violation of any third party right, including without
+                  limitation any copyright, trademark, trade secret or other
+                  intellectual property or privacy right; and
+                </li>
+                <li>
+                  vii) Any claim that the Website and/or Content caused damage
+                  to a third party.
+                </li>
+                <h1>To the extent permitted by law:</h1>
+                <li>
+                  i) our total liability and the total liability of our
+                  Ancillary Parties shall be limited to the amount of R100 (one
+                  hundred Rand), save where you purchase any of our Products
+                  and/or Services in which case our total liability and the
+                  total liability of our Ancillary Parties shall be limited to
+                  the amount you paid to us for the purchase of our Products
+                  and/or Services;
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-1 text-2xl">
+              External Websites
+            </h1>
+            <div>
+              <p>
+                The Website and Content may contain links to third party
+                websites, including but not limited to distributor and approved
+                dealer websites (“External Websites”). These links are provided
+                “as is” and for your convenience only and are not an endorsement
+                by us of the content, information or views expressed thereon.
+              </p>
+              <p>
+                If you link to External Websites, you will be subject to those
+                External Websites’ terms and conditions, privacy and other
+                policies, therefore we advise and recommend that you review and
+                comply therewith. We do not take any responsibility for the
+                content and information that appears on External Websites (even
+                if our Website or Content is linked thereon), nor do we accept
+                liability for any damage or loss of any nature whatsoever and
+                howsoever arising from your use of such External Websites, which
+                use is at your own risk.
+              </p>
+              <p>
+                You agree that we cannot be liable for any illegal, offensive or
+                defamatory communication, information or content on any External
+                Websites or any behaviour associated or in connection therewith
+              </p>
+            </div>
+          </div>
+          <div>
+            <h1 className="font-bold text-green-800 py-1 text-2xl">Contact</h1>
+            <p>
+              If you have any questions or comments about this Privacy Policy
+              please contact us at marketing@chavda.com
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}

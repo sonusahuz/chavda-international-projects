@@ -126,7 +126,7 @@ export default function Header() {
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
                   className="text-sm hover:underline"
-                  to="/"
+                  to="/contact-us"
                 >
                   CONTACT US
                 </Link>
@@ -210,7 +210,11 @@ export default function Header() {
                     <SelectItem value="home">Home & Garden</SelectItem>
                   </SelectContent>
                 </Select>
-                <Button variant="ghost" size="icon" className="shrink-0 border rounded-none">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="shrink-0 border rounded-none"
+                >
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Search</span>
                 </Button>

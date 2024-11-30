@@ -33,17 +33,9 @@ const CompanyCard = () => {
       id: 8,
       image: './assets/images/company/company8.webp',
     },
-    {
-      id: 9,
-      image: './assets/images/company/company9.png',
-    },
-    {
-      id: 10,
-      image: './assets/images/company/company10.png',
-    },
   ];
   return (
-    <div className="grid grid-cols-2 scroll-container md:grid-cols-4 lg:grid-cols-7 gap-8 py-4 items-center justify-items-center">
+    <div className="grid px-4 md:px-5 mx-auto text-center lg:px-10 xl:px-24 grid-cols-2 scroll-container md:grid-cols-4 lg:grid-cols-7 gap-8 py-4 items-center justify-items-center">
       {companyArr.map((company) => (
         <img
           key={company.id}
@@ -51,7 +43,7 @@ const CompanyCard = () => {
           alt={`Bottom logo ${company.id + 1}`}
           width={120}
           height={40}
-          className="max-w-[120px] h-auto grayscale"
+          className="max-w-[120px] h-auto grayscale mx-auto"
         />
       ))}
     </div>
