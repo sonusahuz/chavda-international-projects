@@ -21,11 +21,11 @@ const ProductCard = ({
         className="relative rounded-lg mx-auto hover:border-green-500 duration-300 hover:shadow-2xl max-w-sm w-full"
       >
         {/* Floating Buttons */}
-        <div className="absolute right-2 top-2 flex flex-col gap-2 z-[100]">
+        <div className="absolute right-2 top-2 flex flex-col gap-2">
           <Button
             size="icon2"
             variant="ghost"
-            className="rounded-full z-[100] bg-green-600 hover:bg-green-700 text-white"
+            className="rounded-full z-10 bg-green-600 hover:bg-green-700 text-white"
           >
             <Heart className="h-5 w-5" />
             <span className="sr-only">Add to wishlist</span>
@@ -33,7 +33,7 @@ const ProductCard = ({
           <Button
             size="icon2"
             variant="ghost"
-            className="rounded-full z-[100] bg-green-600 hover:bg-green-700 text-white"
+            className="rounded-full z-10 bg-green-600 hover:bg-green-700 text-white"
           >
             <ShoppingCart className="h-5 w-5" />
             <span className="sr-only">Add to cart</span>

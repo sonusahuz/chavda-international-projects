@@ -31,10 +31,13 @@ export function SubMenu() {
                     <SelectValue placeholder=" BROWSE CATEGORIES" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="electronics">Electronics</SelectItem>
-                    <SelectItem value="clothing">Clothing</SelectItem>
-                    <SelectItem value="books">Books</SelectItem>
-                    <SelectItem value="home">Home & Garden</SelectItem>
+                    <SelectItem value="electronics">Power Tools</SelectItem>
+                    <SelectItem value="clothing">
+                      Catering & Commercial
+                    </SelectItem>
+                    <SelectItem value="books">Electrical Equipment</SelectItem>
+                    <SelectItem value="home">Hand Tools</SelectItem>
+                    <SelectItem value="home">Electronics</SelectItem>
                   </SelectContent>
                 </Select>
               </Button>

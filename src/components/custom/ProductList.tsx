@@ -11,8 +11,8 @@ interface Product {
   thumbnail: string;
 }
 
-const ProductList = ({ category }: { category: string }) => {
-  const api = `https://dummyjson.com/products/search?q=${category}`;
+const ProductList = () => {
+  const api = `https://dummyjson.com/products`;
   const { data, loading, error } = useFetch<{ products: Product[] }>(api);
 
   if (loading) return <Loading />;

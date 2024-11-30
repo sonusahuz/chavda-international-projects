@@ -2,7 +2,17 @@ import * as React from 'react';
 import ProductCard from '@/components/custom/ProductCard';
 import useFetch from '@/hooks/useFetch';
 import FilterSideBar from '@/components/custom/FilterSideBar';
-import FilterTopBar from '@/components/custom/FilterTopBar';
+import { useParams } from 'react-router-dom';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
+import { Link } from 'react-router-dom';
+import { PaginationDemo } from '@/components/custom/ProdPagination';
 
 interface Product {
   id: number;
@@ -13,17 +23,33 @@ interface Product {
   thumbnail: string;
 }
 
-export default function Shop() {
+export default function CategoryPage() {
+  const { category } = useParams<{ category: string }>();
   const { data } = useFetch<{ products: Product[] }>(
     'https://dummyjson.com/products'
   );
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
-  const [view, setView] = React.useState<'grid' | 'list'>('grid');
-  const [columns, setColumns] = React.useState<9 | 12 | 18 | 24>(12);
-
   return (
     <div className="min-h-screen px-4 md:px-5 lg:px-10 xl:px-24">
+      <div className="flex justify-between items-center mb-2">
+        <h1 className="text-3xl font-bold">{category}</h1>
+        <div>
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink>
+                  <Link to="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{category}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </div>
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
@@ -39,23 +65,7 @@ export default function Shop() {
           setSidebarOpen={setSidebarOpen}
         />
         <main className="lg:ml-0">
-          {/* Top Bar */}
-          <FilterTopBar
-            view={view}
-            columns={columns}
-            setView={setView}
-            setColumns={setColumns}
-            setSidebarOpen={setSidebarOpen}
-          />
-
-          {/* Product Grid */}
-          <div
-            className={`grid gap-4 ${
-              view === 'grid'
-                ? `grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`
-                : 'grid-cols-1'
-            }`}
-          >
+          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-2">
             {data?.products.map((product) => (
               <ProductCard
                 key={product.id}
@@ -69,6 +79,9 @@ export default function Shop() {
         </main>
       </div>
 
+      <div>
+        <PaginationDemo />
+      </div>
       {/* Main Content */}
     </div>
   );

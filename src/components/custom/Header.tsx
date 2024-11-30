@@ -287,7 +287,7 @@ export default function Header() {
                 className="w-full mx-auto block"
                 type="text"
               />
-              <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-e-lg border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
+              <button className="inline-flex items-center bg-[#0aad0a] text-white rounded-none border border-input px-3 text-sm font-medium text-foreground outline-offset-2 transition-colors focus:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring/70 disabled:cursor-not-allowed disabled:opacity-50">
                 Search
               </button>
             </div>

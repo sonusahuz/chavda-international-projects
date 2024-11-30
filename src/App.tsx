@@ -17,6 +17,8 @@ import ScheduleMeeting from './pages/ScheduleMeeting';
 import { SubMenu } from './components/custom/SubMenu';
 import CartPage from './pages/Cart';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Shop from './pages/Shop';
+import CategoryPage from './pages/CategoryPage';
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/schedule-meeting" element={<ScheduleMeeting />} />
