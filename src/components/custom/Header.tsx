@@ -9,8 +9,8 @@ import {
   CircleUserRound,
   Home,
   Search,
-  ShoppingBag,
   GitCompare,
+  Heart,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -237,7 +237,7 @@ export default function Header() {
                 className="flex flex-col items-center gap-1 text-sm hover:text-foreground transition-colors relative"
               >
                 <div className="relative">
-                  <ShoppingCart className="h-5 w-5" />
+                  <Heart className="h-5 w-5" />
                   <span className="absolute -top-2 -right-2 bg-green-600 text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
                     0
                   </span>
@@ -261,7 +261,7 @@ export default function Header() {
                 className="flex flex-col items-center gap-1 text-sm hover:text-foreground transition-colors relative"
               >
                 <div className="relative">
-                  <ShoppingBag className="h-5 w-5" />
+                  <ShoppingCart className="h-5 w-5" />
                   <span className="absolute -top-2 -right-2 bg-green-600 text-destructive-foreground text-xs rounded-full w-4 h-4 flex items-center justify-center">
                     0
                   </span>
